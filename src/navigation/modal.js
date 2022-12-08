@@ -3,6 +3,8 @@ const btn_signUp = document.querySelectorAll(".btn_signUp");
 const modalLogIn = document.querySelector(".modal_logIn");
 const modalSignUp = document.querySelector(".modal_signUp");
 const btn_close = document.querySelectorAll(".close");
+const modalCreate = document.querySelector(".modal_create");
+
 console.log("hei");
 console.log(btn_logIn);
 console.log(btn_logIn.length);
@@ -23,6 +25,7 @@ for(let i = 0; i <btn_close.length; i++) {
     btn_close[i].addEventListener("click", () => {
         modalSignUp.style.display="none";
         modalLogIn.style.display="none";
+        modalCreate.style.display="none";
     })
 }
 
@@ -30,3 +33,10 @@ export function closeModalLogIn() {
     modalLogIn.style.display="none";
 }
 
+
+const btn_create = document.querySelector("#btn_create");
+if(btn_create) {
+    btn_create.addEventListener("click", (e) => {
+    modalCreate.style.display="block";
+});
+}

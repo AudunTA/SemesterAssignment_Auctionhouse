@@ -62,7 +62,10 @@
       <div class="col col-content">
 
         <div class="sort-collection d-flex justify-content-between">
-            <p class="subheader-text">Latest listings</p>
+            <div class="d-flex">
+              <p class="subheader-text filter-text">Latest listings</p>
+           <span id="button-span"></span>
+            </div>
 
             <div class="sort-buttons d-flex">
                 <a href="collection.html?filter=games"><div class="sort-icons rounded">
@@ -84,7 +87,9 @@
                             </div>
                         </div></a>
                     </div>
+                    
                 </div>
+                <button id="btn_create">Create listing</button>
                 <div class="container-cards">
 
                 <div class="card-items rounded m-1">
@@ -196,6 +201,37 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary btn_signUp">Sign Up</button>
               <button type="submit" class="btn btn-primary btn_logIn">Log In</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal_create" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Create Listing</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="create_form">
+                    <input type="text" id="create_title" class="form-control" placeholder="title" />
+        <label class="form-label" for="title"></label>
+        <input type="text" id="create_description" class="form-control" placeholder="description" />
+        <label class="form-label" for="description"></label>
+        <input type="text" id="create_tags" class="form-control" placeholder="tags" />
+        <label class="form-label" for="tags"></label>
+        <input type="text" id="create_media" class="form-control" placeholder="media URL" />
+        <label class="form-label" for="media"></label>
+        <input type="text" id="create_endsAt" class="form-control" placeholder="end date" />
+        <label class="form-label" for="endsAt"></label>
+        
+                
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary btn_logIn">Create</button>
               </form>
             </div>
           </div>
