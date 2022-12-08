@@ -26,3 +26,7 @@ for(let i = 0; i <btn_close.length; i++) {
     })
 }
 
+export function closeModalLogIn() {
+    modalLogIn.style.display="none";
+}
+

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style/navigation.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script defer src="/src/navigation/modal.js"></script>
-    <script defer type="module" src="/src/collection.mjs"></script>
+    <script defer type="module" src="/src/index.mjs"></script>
 </head>
 <body>
 
@@ -25,9 +25,8 @@
             </div>
             <img class="rounded" src="/images/logo.png" id="logo_header">
             <div class="searchbar">
-                <input class="rounded border" type="text" id="search_field" placeholder="Search for an item">
+                <input class="rounded" type="text" id="search_field" placeholder="Search for an item">
             </div>
-            <button type="submit">Search</button>
             <div class="icon_one">
                 <i class="fas fa-bell" id="nav_icon"></i>
             </div>
@@ -35,10 +34,9 @@
                 <i class="fas fa-bell"></i>
             </div>
             <div class="user_login">
-                <div class="d-flex align-items-center border rounded profile-header">
+                <div class="d-flex align-items-center">
                     <img src="/images/coolcat.jpg" id="profile_header">
-                    <span id="header_username">Username</span>
-                    <i class="fa-solid fa-caret-down"></i>
+                    <p>Hello</p> <span id="header_username">Username</span>
                 </div>
               </div>
               <button id="btnHeader_signUp"class="btn btn-primary btn_signUp rounded">Sign Up</button>
@@ -50,8 +48,8 @@
       <div class="col-2 col-nav-left">
         <div class="nav_left">
             <div class="d-flex flex-column">
-               <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon active-icon"></i>
-             <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
+               <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon"></i>
+             <a href="profile.html"><i class="fa-solid fa-user nav_left_icon active-icon"> </i></a>
            
             <i class="fa-solid fa-gear nav_left_icon" ></i>
             <i class="fa-solid fa-album-collection nav_left_icon"></i>
@@ -61,90 +59,7 @@
       </div>
       <div class="col col-content">
 
-        <div class="sort-collection d-flex justify-content-between">
-            <p class="subheader-text">Latest listings</p>
-
-            <div class="sort-buttons d-flex">
-                <a href="collection.html?filter=games"><div class="sort-icons rounded">
-                    <div class="d-flex">
-                        <i class="fa-solid fa-gamepad sort-icon"></i>
-                        <p class="text-center">games</p>
-                    </div>
-                </div></a>
-                <a href="collection.html?filter=vehicles"><div class="sort-icons rounded">
-                        <div class="d-flex">
-                            <i class="fa-solid fa-car sort-icon"></i>
-                        <p>Vehicles</p>
-                        </div>
-                    </div></a>
-                    <a href="collection.html?filter=art"><div class="sort-icons rounded">
-                            <div class="d-flex">
-                                <i class="fa-solid fa-palette sort-icon"></i>
-                                <p>art</p>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-                <div class="container-cards">
-
-                <div class="card-items rounded m-1">
-                    <div class="listed-user d-flex">
-                        <img src="/images/profile.jpg" class="card-profileIMG">
-                        <p>Username</p>
-                    </div>
-                    <div class="listed-img">
-                        <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
-                    </div>
-                    <div class="listed-description">
-                        <h3>cool cat</h3>
-                        <p>very cool cat with glasses. make a bid please i really like this cat</p>
-                    </div>
-                    <button id="btn_view">VIEW ITEM</button>
-                </div>
-                <div class="card-items rounded m-1">
-                  <div class="listed-user d-flex">
-                    <img src="/images/profile.jpg" class="card-profileIMG">
-                    <p>Username</p>
-                  </div>
-                  <div class="listed-img">
-                      <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
-                  </div>
-                  <div class="listed-description">
-                      <h3>cool cat</h3>
-                      <p>very cool cat with glasses. make a bid please i really like this cat</p>
-                  </div>
-                  <button id="btn_view">VIEW ITEM</button>
-              </div>
-              <div class="card-items rounded m-1">
-                <div class="listed-user d-flex">
-                  <img src="/images/profile.jpg" class="card-profileIMG">
-                  <p>Username</p>
-                </div>
-                <div class="listed-img">
-                    <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
-                </div>
-                <div class="listed-description">
-                    <h3>cool cat</h3>
-                    <p>very cool cat with glasses. make a bid please i really like this cat</p>
-                </div>
-                <button id="btn_view">VIEW ITEM</button>
             </div>
-            <div class="card-items rounded m-1">
-              <div class="listed-user d-flex">
-                <img src="/images/profile.jpg" class="card-profileIMG">
-                <p>Username</p>
-              </div>
-              <div class="listed-img">
-                  <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
-              </div>
-              <div class="listed-description">
-                  <h3>cool cat</h3>
-                  <p>very cool cat with glasses. make a bid please i really like this cat</p>
-              </div>
-              <button id="btn_view">VIEW ITEM</button>
-          </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="modal modal_signUp" tabindex="-1" role="dialog">

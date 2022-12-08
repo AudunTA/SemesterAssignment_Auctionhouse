@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/5386c22845.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="/style/homepage.css" />
     <link rel="stylesheet" href="/style/navigation.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script defer src="/src/navigation/modal.js"></script>
@@ -23,8 +25,9 @@
             </div>
             <img class="rounded" src="/images/logo.png" id="logo_header">
             <div class="searchbar">
-                <input class="rounded" type="text" id="search_field" placeholder="Search for an item">
+                <input class="rounded border" type="text" id="search_field" placeholder="Search for an item">
             </div>
+            <button type="submit">Search</button>
             <div class="icon_one">
                 <i class="fas fa-bell" id="nav_icon"></i>
             </div>
@@ -32,11 +35,14 @@
                 <i class="fas fa-bell"></i>
             </div>
             <div class="user_login">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center border rounded profile-header">
                     <img src="/images/coolcat.jpg" id="profile_header">
-                    <p>Hello</p> <span>Username</span>
+                    <span id="header_username">Username</span>
+                    <i class="fa-solid fa-caret-down"></i>
                 </div>
-            </div>
+              </div>
+              <button id="btnHeader_signUp"class="btn btn-primary btn_signUp rounded">Sign Up</button>
+
            </div>
       </div>
       
@@ -44,24 +50,34 @@
       <div class="col-2 col-nav-left">
         <div class="nav_left">
             <div class="d-flex flex-column">
-               <i class="fa-sharp fa-solid fa-house active_nav" id="nav_left_icon"></i>
-            <i class="fa-solid fa-user" id="nav_left_icon"></i>
+               <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon active-icon"></i>
+             <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
            
-            <i class="fa-solid fa-gear" id="nav_left_icon"></i>
+            <i class="fa-solid fa-gear nav_left_icon" ></i>
+            <i class="fa-solid fa-album-collection nav_left_icon"></i>
             </div>
             
            </div>
       </div>
       <div class="col col-content">
-        <div class="d-flex">
-                 <div class="banner-container flex-lg-fill rounded">
+        <div class="container-top-homepage">
+                 <div class="banner-container rounded">
           
-            <h2>Buy and sell stuff</h2>
-            <button id="btn-explore">EXPLORE COLLECTION</button>
+            <h3>Buy and sell stuff</h3>
+            <div class="d-flex">
+              
+            <p> credits</p>
+            </div>
+            <a href="collection.html"><button id="btn-explore">EXPLORE COLLECTION</button></a>
             <button id="btn-list">LIST YOUR ITEM</button>
         </div>
-        <div class="balance-container ">
+        <div class="balance-container rounded">
             <h3>Your balance</h3>
+            <div class="d-flex">
+              <span id="user_credit"></span>
+            <p> credits</p>
+            </div>
+            
             <button id="btn-addBalance">ADD BALANCE</button>
         </div>      
         </div>
@@ -71,39 +87,84 @@
             <div class="sort-buttons d-flex">
                 <div class="sort-icons rounded">
                     <div class="d-flex">
-                        <i class="fa-solid fa-gamepad"></i>
+                        <i class="fa-solid fa-gamepad sort-icon"></i>
                         <p class="text-center">games</p>
                     </div>
                 </div>
                     <div class="sort-icons rounded">
                         <div class="d-flex">
-                            <i class="fa-solid fa-car"></i>
+                            <i class="fa-solid fa-car sort-icon"></i>
                         <p>Vehicles</p>
                         </div>
                     </div>
                         <div class="sort-icons rounded">
                             <div class="d-flex">
-                                <i class="fa-solid fa-palette"></i>
+                                <i class="fa-solid fa-palette sort-icon"></i>
                                 <p>art</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-items rounded">
+                <div class="container-cards">
+
+                <div class="card-items rounded m-1">
                     <div class="listed-user d-flex">
-                        <p>profil</p>
+                        <img src="/images/profile.jpg" class="card-profileIMG">
                         <p>Username</p>
                     </div>
                     <div class="listed-img">
                         <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
                     </div>
                     <div class="listed-description">
-                        <h2>cool cat</h2>
+                        <h3>cool cat</h3>
                         <p>very cool cat with glasses. make a bid please i really like this cat</p>
                     </div>
-                    <button class="rounded" id="btn_view">VIEW ITEM</button>
+                    <button id="btn_view">VIEW ITEM</button>
                 </div>
+                <div class="card-items rounded m-1">
+                  <div class="listed-user d-flex">
+                    <img src="/images/profile.jpg" class="card-profileIMG">
+                    <p>Username</p>
+                  </div>
+                  <div class="listed-img">
+                      <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
+                  </div>
+                  <div class="listed-description">
+                      <h3>cool cat</h3>
+                      <p>very cool cat with glasses. make a bid please i really like this cat</p>
+                  </div>
+                  <button id="btn_view">VIEW ITEM</button>
+              </div>
+              <div class="card-items rounded m-1">
+                <div class="listed-user d-flex">
+                  <img src="/images/profile.jpg" class="card-profileIMG">
+                  <p>Username</p>
+                </div>
+                <div class="listed-img">
+                    <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
+                </div>
+                <div class="listed-description">
+                    <h3>cool cat</h3>
+                    <p>very cool cat with glasses. make a bid please i really like this cat</p>
+                </div>
+                <button id="btn_view">VIEW ITEM</button>
             </div>
+            <div class="card-items rounded m-1">
+              <div class="listed-user d-flex">
+                <img src="/images/profile.jpg" class="card-profileIMG">
+                <p>Username</p>
+              </div>
+              <div class="listed-img">
+                  <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
+              </div>
+              <div class="listed-description">
+                  <h3>cool cat</h3>
+                  <p>very cool cat with glasses. make a bid please i really like this cat</p>
+              </div>
+              <button id="btn_view">VIEW ITEM</button>
+          </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal modal_signUp" tabindex="-1" role="dialog">
@@ -116,18 +177,19 @@
               </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <input type="text" id="userName" class="form-control" placeholder="Username" />
+                <form id="signUp_form">
+                    <input type="text" id="userName_signUp" class="form-control" placeholder="Username" />
         <label class="form-label" for="loginName"></label>
-                    <input type="email" id="loginName" class="form-control" placeholder="Email" />
+                    <input type="email" id="userEmail_signUp" class="form-control" placeholder="Email" />
         <label class="form-label" for="loginName"></label>
-        <input type="password" id="loginName" class="form-control" placeholder="Password" />
+        <input type="password" id="userPassword_signUp" class="form-control" placeholder="Password" />
         <label class="form-label" for="loginName"></label>
-                </form>
+                
             </div>
             <div class="modal-footer">
-              <button type="button " class="btn btn-primary btn_singUp">Sign Up</button>
-              <button type="button " class="btn btn-secondary btn_logIn">Login</button>
+              <button type="submit" class="btn btn-primary btn_singUp">Sign Up</button>
+              <button type="button" class="btn btn-secondary btn_logIn">Login</button>
+              </form>
             </div>
           </div>
         </div>
@@ -144,16 +206,17 @@
               </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <input type="email" id="loginName" class="form-control" placeholder="Email" />
+                <form id="logIn_form">
+                    <input type="email" id="userEmail_logIn" class="form-control" placeholder="Email" />
         <label class="form-label" for="loginName"></label>
-        <input type="password" id="loginName" class="form-control" placeholder="Password" />
+        <input type="password" id="userPassword_logIn" class="form-control" placeholder="Password" />
         <label class="form-label" for="loginName"></label>
-                </form>
+                
             </div>
             <div class="modal-footer">
-              <button type="button " class="btn btn-primary btn_signUp">Sign Up</button>
-              <button type="button " class="btn btn-primary btn_logIn">Log In</button>
+              <button type="button" class="btn btn-secondary btn_signUp">Sign Up</button>
+              <button type="submit" class="btn btn-primary btn_logIn">Log In</button>
+              </form>
             </div>
           </div>
         </div>

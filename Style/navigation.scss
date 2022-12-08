@@ -11,7 +11,7 @@ body {
     background-color: var(--dark);
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+
  
 
 }
@@ -26,12 +26,14 @@ line-height: 96px;
     margin: 5px;
     background-color: var(--white);
     border-radius: 19px;
+    height: 50px;
 }
 #nav_icon {
     width: 50px;
 }
 #search_field  {
     width: 100%;
+    padding: 5px;
 }
 .searchbar {
     width: 100%;
@@ -54,22 +56,43 @@ line-height: 96px;
     height: 30px;
     
 }
+.profile-header {
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 5px;
+}
+.fa-caret-down {
+    margin-left: 5px;
+}
+#header_username {
+    margin-left: 5px;
+}
+#btnHeader_signUp {
+    height: 30px;
+    width: 150px;
+}
+.user_login {
+    display: none;
+}
+
 #profile_header {
     width: 30px;
     height: 30px;
     object-fit: cover;
     border-radius: 66%;
 }
-.active_nav {
-    background-color: var(--pink);
-}
-.fa-house {
-    color: white;
-}
-#nav_left_icon {
+
+
+.nav_left_icon {
+    color: black;
     margin: 5px auto;
     padding: 10px;
     border-radius: 33%;
+}
+.active-icon {
+    background-color: var(--pink);
+    color: var(--white);
 }
 .test {
     width: 100px;
@@ -79,57 +102,9 @@ line-height: 96px;
 .col-nav-left {
     width: 100px;
 }
-.col-content {
-    margin-top: 5px;
-    width: 100%;
-    
-}
-.banner-container {
-   
-    background-color: var(--gray);
-}
-.balance-container {
-   
-    background-color: black;
-}
-#btn-explore, #btn-list, #btn-addBalance {
-    color: white;
-    background-color: var(--pink);
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: none;
-    border-radius: 19px;
-}
-.subheader-text {
-    color: var(--blue);
-}
-.sort-icons {
-    background-color: var(--white);
-    height: 35px;
-    padding: 4px;
-}
-.card-items {
-    background-color: var(--white);
-    padding: 3px;
-    max-width: 250px;
-}
-#btn_view {
-    width: 100%;
-    background-color: var(--pink);
-    color: white;
-    border-radius: 19px;
-}
-#img_listed {
-    width: 100%;
-}
 
-.modal_signUp  {
-    display: block;
-}
-.modal_logIn {
-    display: none;
-}
+
+
 
 @media only screen and (max-width: 991px) {
     .col-nav-left {
