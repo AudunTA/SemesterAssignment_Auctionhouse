@@ -12,7 +12,7 @@ export function DOM_listing (DOM_element, DOM_object) {
         <h3>${DOM_object.title}</h3>
         <p>${DOM_object.description}</p>
     </div>
-    <a href="spesific.html?_id=${DOM_object.id}"><button id="btn_view">VIEW ITEM</button></a>
+    <a href="spesific.html?id=${DOM_object.id}"><button id="btn_view">VIEW ITEM</button></a>
 </div>`;
     console.log(DOM_object.title);
 };
