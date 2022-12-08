@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "name": "semesterassignment_auctionhouse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudunTA/SemesterAssignment_Auctionhouse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AudunTA/SemesterAssignment_Auctionhouse/issues"
+  },
+  "homepage": "https://github.com/AudunTA/SemesterAssignment_Auctionhouse#readme",
+  "description": ""
+}

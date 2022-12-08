@@ -1,0 +1,143 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+:root {
+    --blue: #2A3475;
+    --white: #ffffff;
+    --gray: #F4F7FE;
+    --pink: #FF667B;
+    --dark: #292929;
+}
+body {
+    background-color: var(--dark);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+ 
+
+}
+body h2 {
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 2rem;
+line-height: 96px;
+}
+.nav_menu {
+    margin: 5px;
+    background-color: var(--white);
+    border-radius: 19px;
+}
+#nav_icon {
+    width: 50px;
+}
+#search_field  {
+    width: 100%;
+}
+.searchbar {
+    width: 100%;
+}
+#nav_icon {
+    width: 75px;
+}
+.nav_left {
+    position: fixed;
+    text-align: center;
+    height: 90vh;
+    width: 75px;
+    background-color: var(--white);
+    border-radius: 19px;
+    margin: 5px;
+}
+#logo_header {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    
+}
+#profile_header {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 66%;
+}
+.active_nav {
+    background-color: var(--pink);
+}
+.fa-house {
+    color: white;
+}
+#nav_left_icon {
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 33%;
+}
+.test {
+    width: 100px;
+    height: 10000px;
+    background-color: var(--pink);
+}
+.col-nav-left {
+    width: 100px;
+}
+.col-content {
+    margin-top: 5px;
+    width: 100%;
+    
+}
+.banner-container {
+   
+    background-color: var(--gray);
+}
+.balance-container {
+   
+    background-color: black;
+}
+#btn-explore, #btn-list, #btn-addBalance {
+    color: white;
+    background-color: var(--pink);
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 19px;
+}
+.subheader-text {
+    color: var(--blue);
+}
+.sort-icons {
+    background-color: var(--white);
+    height: 35px;
+    padding: 4px;
+}
+.card-items {
+    background-color: var(--white);
+    padding: 3px;
+    max-width: 250px;
+}
+#btn_view {
+    width: 100%;
+    background-color: var(--pink);
+    color: white;
+    border-radius: 19px;
+}
+#img_listed {
+    width: 100%;
+}
+
+.modal_signUp  {
+    display: block;
+}
+.modal_logIn {
+    display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    .col-nav-left {
+        display: none;
+    }
+}
+@media only screen and (min-width: 991px) {
+    #logo_header {
+        margin-left: 25px;
+    }
+}

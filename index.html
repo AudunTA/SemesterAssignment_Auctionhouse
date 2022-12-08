@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5386c22845.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style/navigation.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script defer src="/src/navigation/modal.js"></script>
+    <script defer type="module" src="/src/index.mjs"></script>
+</head>
+<body>
+
+  
+   <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="nav_menu d-flex align-items-center" >
+            <div class="logo align-items-center">
+        
+            </div>
+            <img class="rounded" src="/images/logo.png" id="logo_header">
+            <div class="searchbar">
+                <input class="rounded" type="text" id="search_field" placeholder="Search for an item">
+            </div>
+            <div class="icon_one">
+                <i class="fas fa-bell" id="nav_icon"></i>
+            </div>
+            <div class="icon_two">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="user_login">
+                <div class="d-flex align-items-center">
+                    <img src="/images/coolcat.jpg" id="profile_header">
+                    <p>Hello</p> <span>Username</span>
+                </div>
+            </div>
+           </div>
+      </div>
+      
+      <div class="w-100"></div>
+      <div class="col-2 col-nav-left">
+        <div class="nav_left">
+            <div class="d-flex flex-column">
+               <i class="fa-sharp fa-solid fa-house active_nav" id="nav_left_icon"></i>
+            <i class="fa-solid fa-user" id="nav_left_icon"></i>
+           
+            <i class="fa-solid fa-gear" id="nav_left_icon"></i>
+            </div>
+            
+           </div>
+      </div>
+      <div class="col col-content">
+        <div class="d-flex">
+                 <div class="banner-container flex-lg-fill rounded">
+          
+            <h2>Buy and sell stuff</h2>
+            <button id="btn-explore">EXPLORE COLLECTION</button>
+            <button id="btn-list">LIST YOUR ITEM</button>
+        </div>
+        <div class="balance-container ">
+            <h3>Your balance</h3>
+            <button id="btn-addBalance">ADD BALANCE</button>
+        </div>      
+        </div>
+        <div class="sort-collection d-flex justify-content-between">
+            <p class="subheader-text">Latest listings</p>
+
+            <div class="sort-buttons d-flex">
+                <div class="sort-icons rounded">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <p class="text-center">games</p>
+                    </div>
+                </div>
+                    <div class="sort-icons rounded">
+                        <div class="d-flex">
+                            <i class="fa-solid fa-car"></i>
+                        <p>Vehicles</p>
+                        </div>
+                    </div>
+                        <div class="sort-icons rounded">
+                            <div class="d-flex">
+                                <i class="fa-solid fa-palette"></i>
+                                <p>art</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-items rounded">
+                    <div class="listed-user d-flex">
+                        <p>profil</p>
+                        <p>Username</p>
+                    </div>
+                    <div class="listed-img">
+                        <img class="rounded" src="/images/coolcat.jpg" id="img_listed">
+                    </div>
+                    <div class="listed-description">
+                        <h2>cool cat</h2>
+                        <p>very cool cat with glasses. make a bid please i really like this cat</p>
+                    </div>
+                    <button class="rounded" id="btn_view">VIEW ITEM</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal modal_signUp" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="text" id="userName" class="form-control" placeholder="Username" />
+        <label class="form-label" for="loginName"></label>
+                    <input type="email" id="loginName" class="form-control" placeholder="Email" />
+        <label class="form-label" for="loginName"></label>
+        <input type="password" id="loginName" class="form-control" placeholder="Password" />
+        <label class="form-label" for="loginName"></label>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button " class="btn btn-primary btn_singUp">Sign Up</button>
+              <button type="button " class="btn btn-secondary btn_logIn">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal modal_logIn" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">LogIn</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="email" id="loginName" class="form-control" placeholder="Email" />
+        <label class="form-label" for="loginName"></label>
+        <input type="password" id="loginName" class="form-control" placeholder="Password" />
+        <label class="form-label" for="loginName"></label>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button " class="btn btn-primary btn_signUp">Sign Up</button>
+              <button type="button " class="btn btn-primary btn_logIn">Log In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
