@@ -5,6 +5,7 @@ import {getToken} from "./auth/status.mjs";
 import { displayListing } from "./listings/displayListing.mjs";
 import { updateUserDOM } from "./auth/status.mjs";
 import { signOut } from "./auth/signout.mjs";
+import { getAvatarLoggedIn } from "./auth/status.mjs";
 console.log(baseUrl);
 const userLoggedIn = document.querySelector(".user-logIn");
 const btn_signUp = document.querySelector("#btnHeader_signUp");
@@ -12,6 +13,8 @@ if(getToken()) {
     const username = localStorage.getItem("username");
     const credits = localStorage.getItem("credit");
     userLoggedIn.style.display="block";
+    getAvatarLoggedIn();
+
 
     btn_signUp.style.display="none";
     updateUserDOM(username, credits);

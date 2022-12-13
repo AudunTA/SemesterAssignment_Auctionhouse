@@ -4,16 +4,16 @@ const endpoint = "/auction/listings";
     const token = localStorage.getItem("accessToken");
 
 export function postListing(title, description, tags, media, endsAt) {
-    const data = JSON.stringify( {
-
-        title: `${title}`,
-        description: `${description}`,
-        tags:  [`${tags}`],
-        media: `${media}`,
-        endsAt: `${endsAt}`
-      });
-      converteDate(endsAt);
-      console.log(data);
+  const ends = converteDate(endsAt);
+  const data = {
+    title: title,
+    description: description,
+    endsAt: ends,
+    tags: [tags],
+    media: [media]
+  };
+  console.log(JSON.stringify(data));
+      console.log(title, description, ends, media);
         //url fetch and post method
         fetch(`${baseUrl}${endpoint}`, {
         method: 'POST', 
@@ -22,14 +22,10 @@ export function postListing(title, description, tags, media, endsAt) {
           'content-Type': 'application/json',
         },
         //data in the body
-        body: JSON.stringify( {
-            title: `${title}`,
-            description: `${description}`,
-            endsAt: `${endsAt}`,
-            tags:  [`${tags}`],
-            media: `${media}`
-        })
+        body: JSON.stringify(data),
+        
       })
+
         .then((response) => {
           if (response.ok === true) {
             //reloads page if comment is posted to update the display
@@ -38,12 +34,12 @@ export function postListing(title, description, tags, media, endsAt) {
           return response.json();
         })
         .then((Object) => {
-          //failed
+          console.log(Object);
         })
         .catch(error => console.log("error",  error));
     }
 
 function converteDate(date) {
   const iso = date + 'T00:00:00.000Z';
-console.log(iso);
+  return iso;
 }

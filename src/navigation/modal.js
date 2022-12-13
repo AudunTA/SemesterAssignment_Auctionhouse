@@ -4,7 +4,7 @@ const modalLogIn = document.querySelector(".modal_logIn");
 const modalSignUp = document.querySelector(".modal_signUp");
 const btn_close = document.querySelectorAll(".close");
 const modalCreate = document.querySelector(".modal_create");
-
+const allModals = document.querySelectorAll(".modal");
 console.log("hei");
 console.log(btn_logIn);
 console.log(btn_logIn.length);
@@ -23,9 +23,9 @@ for(let i = 0; i <btn_signUp.length; i++) {
 }
 for(let i = 0; i <btn_close.length; i++) {
     btn_close[i].addEventListener("click", () => {
-        modalSignUp.style.display="none";
-        modalLogIn.style.display="none";
-        modalCreate.style.display="none";
+        for(let x = 0; x < allModals.length; x++) {
+            allModals[x].style.display="none";
+        }
     })
 }
 
