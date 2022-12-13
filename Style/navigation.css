@@ -10791,11 +10791,19 @@ body h2, body .h2 {
   line-height: 96px;
 }
 
+.sort-icons {
+  border: none;
+}
+
 .nav_menu {
   margin: 5px;
   background-color: var(--white);
   border-radius: 19px;
   height: 50px;
+}
+
+.row > div {
+  padding-left: 0 !important;
 }
 
 #nav_icon {
@@ -10838,6 +10846,12 @@ body h2, body .h2 {
   padding: 5px;
 }
 
+.user-logIn {
+  display: none;
+  margin: 5px;
+  margin-right: 10px;
+}
+
 .fa-caret-down {
   margin-left: 5px;
 }
@@ -10849,6 +10863,11 @@ body h2, body .h2 {
 #btnHeader_signUp {
   height: 30px;
   width: 150px;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #2A3475 !important;
 }
 
 .user_login {
@@ -10884,13 +10903,8 @@ body h2, body .h2 {
   width: 100px;
 }
 
-@media only screen and (max-width: 991px) {
-  .col-nav-left {
-    display: none;
-  }
-}
-@media only screen and (min-width: 991px) {
-  #logo_header {
-    margin-left: 25px;
-  }
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }/*# sourceMappingURL=navigation.css.map */

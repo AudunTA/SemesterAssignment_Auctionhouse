@@ -46,22 +46,8 @@
   color: var(--blue);
 }
 
-.sort-icons {
-  cursor: pointer;
-  background-color: var(--white);
-  padding: 4px;
-  margin-left: 5px;
-  height: 30px;
-}
-
 .sort-collection {
   margin: 5px;
-}
-
-.sort-icon {
-  color: var(--pink);
-  margin-top: 5px;
-  margin-right: 5px;
 }
 
 .card-items {
@@ -92,6 +78,22 @@
   object-fit: cover;
 }
 
+#profile-picture {
+  width: 100%;
+  max-width: 55px;
+  min-width: 30px;
+  border-radius: 66%;
+}
+
+body {
+  background-color: #292929;
+}
+
+@media only screen and (min-width: 576px) {
+  .col-buy {
+    padding-right: 0px !important;
+  }
+}
 @media only screen and (min-width: 768px) {
   .balance-container {
     width: 300px;

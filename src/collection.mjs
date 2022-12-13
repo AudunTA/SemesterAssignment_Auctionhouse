@@ -20,6 +20,7 @@ const searchWord = params.get("search");
 if(searchWord) {
     filter_text.innerHTML="search:";
     container.innerHTML="";
+    
     await search("yo");
 };
 const sortButtons = document.querySelectorAll(".sort-icons");
@@ -27,33 +28,35 @@ const filter = params.get("filter");
 console.log(filter);
 //console.log(searchWord);
 if((!filter) && (!searchWord)) {
+   
+
     displayListing(4);
 }
 if(filter) {
     filter_text.innerHTML="filter:";
     if(filter === "games") {
         const icon_games = document.querySelector(".fa-gamepad");
-        sortButtons[0].style.backgroundColor="blue";
+        sortButtons[0].style.backgroundColor="#FF667B";
         sortButtons[0].style.color="white";
         icon_games.style.color="white";
-        btn_span.innerHTML = ` <a href="collection.html"><button>games X</button></a>`;
+        btn_span.innerHTML = ` <a href="collection.html"><button class="btn btn-danger m-1">games X</button></a>`;
         sortFilter("games");
     }
     if(filter === "vehicles") {
         const icon_vehicles = document.querySelector(".fa-car");
-        sortButtons[1].style.backgroundColor="blue";
+        sortButtons[1].style.backgroundColor="#FF667B";
         sortButtons[1].style.color="white";
         icon_vehicles.style.color="white";
-        btn_span.innerHTML = ` <a href="collection.html"><button>vehicles X</button></a>`;
+        btn_span.innerHTML = ` <a href="collection.html"><button class="btn btn-danger m-1">vehicles X</button></a>`;
         sortFilter("vehicles");
 
     }
     if(filter === "art") {
         const icon_art = document.querySelector(".fa-palette");
-        sortButtons[2].style.backgroundColor="blue";
+        sortButtons[2].style.backgroundColor="#FF667B";
         sortButtons[2].style.color="white";
         icon_art.style.color="white";
-        btn_span.innerHTML = ` <a href="collection.html"><button>art X</button></a>`;
+        btn_span.innerHTML = ` <a href="collection.html"><button class="btn btn-danger m-1">art X</button></a>`;
         sortFilter("art");
 
     }

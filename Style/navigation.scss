@@ -8,12 +8,9 @@
     --dark: #292929;
 }
 body {
-    background-color: var(--white);
+    background-color: var(--dark);
     font-family: 'Poppins';
     font-style: normal;
-
- 
-
 }
 body h2 {
     font-family: 'Poppins';
@@ -22,12 +19,19 @@ font-weight: 700;
 font-size: 2rem;
 line-height: 96px;
 }
+.sort-icons {
+    border: none;
+}
 .nav_menu {
     margin: 5px;
     background-color: var(--white);
     border-radius: 19px;
     height: 50px;
 }
+.row  > div {
+    padding-left: 0 !important;
+ }
+
 #nav_icon {
     width: 50px;
 }
@@ -62,6 +66,11 @@ line-height: 96px;
     padding-right: 5px;
     padding: 5px;
 }
+.user-logIn {
+    display: none;
+    margin: 5px;
+    margin-right: 10px;
+}
 .fa-caret-down {
     margin-left: 5px;
 }
@@ -71,6 +80,10 @@ line-height: 96px;
 #btnHeader_signUp {
     height: 30px;
     width: 150px;
+}
+.sidebar {
+    height: 100vh;
+    background-color: #2A3475 !important;
 }
 .user_login {
     display: none;
@@ -102,17 +115,13 @@ line-height: 96px;
 .col-nav-left {
     width: 100px;
 }
-
-
-
-
-@media only screen and (max-width: 991px) {
-    .col-nav-left {
-        display: none;
-    }
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
 }
-@media only screen and (min-width: 991px) {
-    #logo_header {
-        margin-left: 25px;
-    }
-}
+
+
+
+

@@ -4,13 +4,15 @@ import { logIn } from "./auth/login.mjs";
 import {getToken} from "./auth/status.mjs";
 import { displayListing } from "./listings/displayListing.mjs";
 import { updateUserDOM } from "./auth/status.mjs";
+import { signOut } from "./auth/signout.mjs";
 console.log(baseUrl);
-const user_header = document.querySelector(".user_login");
+const userLoggedIn = document.querySelector(".user-logIn");
 const btn_signUp = document.querySelector("#btnHeader_signUp");
 if(getToken()) {
     const username = localStorage.getItem("username");
     const credits = localStorage.getItem("credit");
-    user_header.style.display="block";
+    userLoggedIn.style.display="block";
+
     btn_signUp.style.display="none";
     updateUserDOM(username, credits);
 }
@@ -35,6 +37,11 @@ logIn_form.addEventListener("submit",(e) => {
 
 });
 
-displayListing(3);
+displayListing(2);
+
+const logOut = document.querySelector(".log-out");
+logOut.addEventListener("click", () => {
+    signOut();
+})
 
 
