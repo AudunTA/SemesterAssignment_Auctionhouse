@@ -31,24 +31,11 @@
 }
 
 
-#btn-explore, #btn-list, #btn-addBalance {
-    color: white;
-    background-color: var(--pink);
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: none;
-    border-radius: 19px;
-}
-
 .subheader-text {
     color: var(--blue);
 }
 
 
-.sort-collection {
-    margin: 5px;
-}
 
 
 .card-items {
@@ -61,22 +48,7 @@
     height: 30px;
     border-radius: 66%;
 }
-#btn_view {
-    width: 100%;
-    background-color: var(--pink);
-    color: white;
-    
-    border: none;
-    border-radius: 190px;
-    height: var(--buttonheight);
-    padding: var(--buttonpadding);
-}
-#img_listed {
-    width: 100%;
-    height: 30vh;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-}
+
 
 #profile-picture {
     width: 100%;

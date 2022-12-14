@@ -10775,10 +10775,24 @@ textarea.form-control-lg {
   --gray: #eee5e5;
   --pink: #FF667B;
   --dark: #292929;
+  --background: #111024;
+}
+
+html {
+  height: 100%;
+}
+
+.btn-primary {
+  background-color: #09203F;
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
 }
 
 body {
-  background-color: var(--gray);
+  height: 100%;
+  background: #007991; /* fallback for old browsers */
+  background: linear-gradient(to left, #09203F, #537895);
   font-family: "Poppins";
   font-style: normal;
 }
@@ -10789,10 +10803,6 @@ body h2, body .h2 {
   font-weight: 700;
   font-size: 2rem;
   line-height: 96px;
-}
-
-.sort-icons {
-  border: none;
 }
 
 .nav_menu {
@@ -10895,7 +10905,7 @@ body h2, body .h2 {
   .sort-collection {
     flex-direction: column;
   }
-  .sort-collection button {
+  .sort-buttons button {
     width: 100%;
   }
   .sort-buttons {

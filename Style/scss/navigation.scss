@@ -6,9 +6,33 @@
     --gray: #eee5e5;
     --pink: #FF667B;
     --dark: #292929;
+    --background: #111024;
 }
+html {
+    height: 100%;
+}
+
+.btn-primary {
+    background-color: #09203F;
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+}
+
+
+    
+  
+
 body {
-    background-color: var(--gray);
+    height: 100%;
+    
+    background: #007991;  /* fallback for old browsers */
+    background: linear-gradient(to left, #09203F, #537895);
+    
+    
+    
+    
+
     font-family: 'Poppins';
     font-style: normal;
 }
@@ -19,9 +43,7 @@ font-weight: 700;
 font-size: 2rem;
 line-height: 96px;
 }
-.sort-icons {
-    border: none;
-}
+
 .nav_menu {
     margin: 5px;
     background-color: var(--white);
@@ -40,6 +62,7 @@ line-height: 96px;
 .searchbar {
     width: 100%;
 }
+
 
 .nav_left {
     position: fixed;
@@ -122,9 +145,8 @@ line-height: 96px;
         flex-direction: column;
 
     }    
-    .sort-collection button{
+    .sort-buttons button {
         width: 100%;
-
     }
     .sort-buttons {
         flex-direction: column;
