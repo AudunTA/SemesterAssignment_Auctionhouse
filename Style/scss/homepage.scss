@@ -85,23 +85,14 @@
     border-radius: 66%;
 
 }
-body {
-    background-color: #292929;
-}
+
 
 @media only screen and (min-width: 576px) {
     .col-buy {
         padding-right: 0px !important;
     }
 }
-@media only screen and (min-width: 768px) {
-    .balance-container { 
-        width: 300px;
-    }
-    .container-top-homepage {
-        flex-direction: row;
-    }
-}
+
 @media only screen and (min-width: 991px) {
     .container-cards {
         display: flex;

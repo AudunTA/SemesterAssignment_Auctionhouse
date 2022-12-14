@@ -1,14 +1,14 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 :root {
     --blue: #2A3475;
     --white: #ffffff;
-    --gray: #F4F7FE;
+    --gray: #eee5e5;
     --pink: #FF667B;
     --dark: #292929;
 }
 body {
-    background-color: var(--dark);
+    background-color: var(--gray);
     font-family: 'Poppins';
     font-style: normal;
 }
@@ -28,9 +28,7 @@ line-height: 96px;
     border-radius: 19px;
     height: 50px;
 }
-.row  > div {
-    padding-left: 0 !important;
- }
+
 
 #nav_icon {
     width: 50px;
@@ -47,7 +45,7 @@ line-height: 96px;
     position: fixed;
     text-align: center;
     height: 90vh;
-    width: 80px;
+    width: 90px;
     background-color: var(--white);
     border-radius: 19px;
     margin: 5px;
@@ -56,6 +54,11 @@ line-height: 96px;
     margin: 5px;
     width: 30px;
     height: 30px;
+    
+}
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
     
 }
 .profile-header {
@@ -104,7 +107,29 @@ line-height: 96px;
 	width: 100px;
 
 }
+.md-4 p {
+    font-size: 100px;
+}
 
+@media only screen and (max-width: 768px) {
+    .balance-container { 
+        width: 300px;
+    }
+    .container-top-homepage {
+        flex-direction: row;
+    }
+    .sort-collection {
+        flex-direction: column;
+
+    }    
+    .sort-collection button{
+        width: 100%;
+
+    }
+    .sort-buttons {
+        flex-direction: column;
+    }
+}
 
 
 

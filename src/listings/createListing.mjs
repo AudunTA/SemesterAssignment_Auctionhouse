@@ -5,14 +5,29 @@ const endpoint = "/auction/listings";
 
 export function postListing(title, description, tags, media, endsAt) {
   const ends = converteDate(endsAt);
-  const data = {
+  console.log(media);
+  //body data uten bilde
+  let data = {
+    title: title,
+    description: description,
+    endsAt: ends,
+    tags: [tags]
+
+  };
+  if(media) {
+    console.log("inne");
+    //body data med bilde
+    data = {
     title: title,
     description: description,
     endsAt: ends,
     tags: [tags],
     media: [media]
   };
-  console.log(JSON.stringify(data));
+  }
+  
+  
+
       console.log(title, description, ends, media);
         //url fetch and post method
         fetch(`${baseUrl}${endpoint}`, {
@@ -22,7 +37,7 @@ export function postListing(title, description, tags, media, endsAt) {
           'content-Type': 'application/json',
         },
         //data in the body
-        body: JSON.stringify(data),
+       body: JSON.stringify(data),
         
       })
 

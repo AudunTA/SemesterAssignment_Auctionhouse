@@ -21,7 +21,8 @@ if(searchWord) {
     filter_text.innerHTML="search:";
     container.innerHTML="";
     
-    await search("yo");
+    await search(searchWord);
+    btn_span.innerHTML = ` <a href="collection.html"><button class="btn btn-danger m-1">${searchWord} X</button></a>`;
 };
 const sortButtons = document.querySelectorAll(".sort-icons");
 const filter = params.get("filter");

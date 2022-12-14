@@ -20,6 +20,8 @@ const options = {
 console.log(token);
 if(!token) {
     console.log("user not logged in");
+    btnEditAvatar.disabled = true;
+    btnEditAvatar.classList.add("btn-secondary");
 }else {
     getProfile();
 }
@@ -33,6 +35,10 @@ async function getProfile() {
         options
       );
       const result = await response.json();
+      console.log(response.statusText);
+      if(response.status === 200) {
+        console.log(response.statusText);
+      } else { throw "the API did not respond with with a status of 200"};
       console.log(result);
       DOMUsername.innerHTML =result.name;
       DOMEmail.innerHTML = result.email;
@@ -40,7 +46,9 @@ async function getProfile() {
       console.log(result.avatar);
       DOMavatar.innerHTML = `<img src="${result.avatar}">`;
 
-    } catch (e) {console.log(e);
+    } catch (err) {
+      console.log("test");
+      console.log(err);
     }
   }
 const modal_edit = document.querySelector(".modal_edit");

@@ -8,8 +8,8 @@
     <script src="/node_modules/bootstrap/js/dist/dropdown.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" href="/style/homepage.css" />
-    <link rel="stylesheet" href="/style/navigation.css" />
+    <link rel="stylesheet" href="/dist/css/homepage.css" />
+    <link rel="stylesheet" href="/dist/css/navigation.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script defer src="/src/navigation/modal.js"></script>
     <script defer type="module" src="/src/index.mjs"></script>
@@ -28,11 +28,11 @@
             <div class="logo align-items-center">
         
             </div>
-            <img class="rounded" src="/images/logo.png" id="logo_header">
+            
             <div class="searchbar">
-                <input class="rounded border" type="text" id="search_field" placeholder="Search for an item">
+                <input class="rounded border m-4 d-none d-md-block w-100 p-1" type="text" id="search_fieldH" placeholder="Search for an item">
             </div>
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-secondary d-none d-md-block" id="btn_searchH" type="submit">Search</button>
 
             <div class="dropdown user-logIn">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2 profile-pic-header" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,14 +64,22 @@
            </div>
       </div>
       <div class="col col-content">
+        <div class="searchbar row m-1">
+          <div class="col-md-8 col-lg-8 mb-2 d-flex">
+          <input class="rounded border d-md-none w-100" type="text" id="search_fieldM" placeholder="Search for an item">
+      
+      <button class="btn btn-secondary d-md-none" id="btn_searchM" type="submit">Search</button>
+      </div>
+          </div>
+
         <div class="row m-1">
           <div class="col-md-8 col-lg-8 mb-2">
             <div class="card m-1 w-100 h-100" style="width: 18rem;">
               <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Buy and sell stuff</h5>
                 <div class="d-flex">
-                        <a href="#" class="btn btn-primary m-1">EXPLORE COLLECTION</a>
-                <a href="#" class="btn btn-primary m-1">LIST YOUR ITEM</a>
+                        <a href="collection.html"><button class ="btn btn-primary m-1">EXPLORE COLLECTION</button></a>
+                <button class="btn btn-primary m-1" id="btn_create">LIST YOUR ITEM</button>
                 </div>
           
               </div>
@@ -82,32 +90,51 @@
               <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Available Balance</h5>
                 <p class="card-text"><span id="user_credit"></span> credits</p>
-                <a href="#" class="btn btn-primary">ADD BALANCE</a>
+                 <button class="btn btn-primary" id="btn_addBalance">ADD BALANCE</button>
               </div>
             </div>
           </div>
           
             </div>
+            <div class="row m-1">
 
-
-        <div class="sort-collection d-flex justify-content-between col">
-            <p class="subheader-text">Latest listings</p>
-
-            <div class="sort-buttons d-flex">
-              <button class="btn btn-primary m-1">
-                <i class="fa-solid fa-gamepad sort-icon"></i>
-             games</button>
+            
+        
+              <div class="col">
+                <div class="card m-1 w-100 h-100" style="width: 18rem;">
+                  <div class="m-1">
                     
-                      <button class="btn btn-primary m-1">
-                        <i class="fa-solid fa-car sort-icon"></i>
-                     vehicles</button>
-                        <button class="btn btn-primary m-1">
-                      <i class="fa-solid fa-gamepad sort-icon"></i>
-                   games</button>
-                    </div>
-                    
-                    </div>
+                    <div class="sort-collection d-flex justify-content-between col">
+                      <div class="d-flex">
+                        <p class="subheader-text filter-text">Latest listings</p>
+                        <span id="button-span"></span>
+                      </div>
+                      
+            
+                      <div class="sort-buttons d-flex justify-content-between">
+                        <a href="collection.html?filter=games"><button class="btn btn-primary m-1 sort-icons">
+                          <i class="fa-solid fa-gamepad sort-icon"></i>
+                       games</button></a>
+                              
+                       <a href="collection.html?filter=vehicles"><button class="btn btn-primary m-1 sort-icons">
+                                  <i class="fa-solid fa-car sort-icon"></i>
+                               vehicles</button></a>
+                               <a href="collection.html?filter=art"><button class="btn btn-primary m-1 sort-icons">
+                                <i class="fa-solid fa-palette sort-icon"></i>
+                             art</button></a>
+                              </div>
+                              
+                              </div>
 
+                  
+                </div>
+              </div>
+            
+                  
+                </div>
+                <div class="row m-1">
+
+                </div>
                 <div class="container m-1">
                   <div class="row container-cards">
                     
@@ -198,6 +225,37 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary btn_signUp">Sign Up</button>
               <button type="submit" class="btn btn-primary btn_logIn">Log In</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal_create" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Create Listing</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="create_form">
+                    <input type="text" id="create_title" class="form-control" placeholder="title" />
+        <label class="form-label" for="title"></label>
+        <input type="text" id="create_description" class="form-control" placeholder="description" />
+        <label class="form-label" for="description"></label>
+        <input type="text" id="create_tags" class="form-control" placeholder="tags" />
+        <label class="form-label" for="tags"></label>
+        <input type="text" id="create_media" class="form-control" placeholder="media URL" />
+        <label class="form-label" for="media"></label>
+        <input type="text" id="create_endsAt" class="form-control" placeholder="end date (YYYY-MM-DD)" />
+        <label class="form-label" for="endsAt"></label>
+        
+                
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary btn_logIn">Create</button>
               </form>
             </div>
           </div>

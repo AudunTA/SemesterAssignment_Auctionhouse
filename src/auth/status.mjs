@@ -38,3 +38,19 @@ export async function getAvatarLoggedIn() {
     } catch (e) {console.log(e);
     }
   }
+
+export async function updateCredits () {
+  console.log("HAHA");
+  try {
+    const response = await fetch(
+      `${baseUrl}${endpoint}`,
+      options
+    );
+    const result = await response.json();
+    
+    localStorage.setItem("credit", result.credits);
+
+  } catch(e) {
+
+  }
+}
