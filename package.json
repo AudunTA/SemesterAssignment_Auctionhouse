@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "build": "sass style/scss:dist/css",
+    "watch": "sass --watch style/scss:dist/css & live-server"
   },
   "devDependencies": {
     "live-server": "^1.2.2",

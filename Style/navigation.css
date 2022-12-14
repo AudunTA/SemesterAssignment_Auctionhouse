@@ -10819,15 +10819,11 @@ body h2, body .h2 {
   width: 100%;
 }
 
-#nav_icon {
-  width: 75px;
-}
-
 .nav_left {
   position: fixed;
   text-align: center;
   height: 90vh;
-  width: 75px;
+  width: 80px;
   background-color: var(--white);
   border-radius: 19px;
   margin: 5px;
@@ -10856,20 +10852,6 @@ body h2, body .h2 {
   margin-left: 5px;
 }
 
-#header_username {
-  margin-left: 5px;
-}
-
-#btnHeader_signUp {
-  height: 30px;
-  width: 150px;
-}
-
-.sidebar {
-  height: 100vh;
-  background-color: #2A3475 !important;
-}
-
 .user_login {
   display: none;
 }
@@ -10882,7 +10864,8 @@ body h2, body .h2 {
 }
 
 .nav_left_icon {
-  color: black;
+  color: var(--dark);
+  font-size: 20px;
   margin: 5px auto;
   padding: 10px;
   border-radius: 33%;
@@ -10893,18 +10876,6 @@ body h2, body .h2 {
   color: var(--white);
 }
 
-.test {
-  width: 100px;
-  height: 10000px;
-  background-color: var(--pink);
-}
-
 .col-nav-left {
   width: 100px;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
 }/*# sourceMappingURL=navigation.css.map */
