@@ -14,7 +14,21 @@
     <script defer type="module" src="/src/spesific.mjs"></script>
 </head>
 <body>
-
+  <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark nav-mobile">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">AuctionHose</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="collection.html" class="nav-item nav-link">Collection</a>
+                <a href="profile.html" class="nav-item nav-link">Profile</a>
+            </div>
+        </div>
+    </div>
+</nav>
   
    <div class="container">
     <div class="row">
@@ -74,7 +88,7 @@
             <div class="card m-1 w-100 h-100" style="width: 18rem;">
               <div class="card-body d-flex flex-column justify-content-between">
                 <div>
-                                  <p><span id="spesific-description"></span></p>
+                                  <span id="spesific-description"></span>
                 <strong><p>highest bid:</strong> <span id="highest-bid"></span></p>
                 <p>seller: <span id="seller-name"></span></p>
                 <div class="container-cards">

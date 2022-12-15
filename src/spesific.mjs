@@ -11,49 +11,50 @@ const bidAmount = document.querySelector("#input_bid");
 console.log(id);
 const endpoint = `/auction/listings/${id}/bids`;
 spesific(id);
-if(!token) {
-    console.log("user not logged in");
-    btnBid.disabled = true;
-    btnBid.classList.add("btn-secondary");
+if (!token) {
+  console.log("user not logged in");
+  btnBid.disabled = true;
+  btnBid.classList.add("btn-secondary");
 }
 btnBid.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("test");
-    submitBid(bidAmount.value);
+  e.preventDefault();
+  console.log("test");
+  submitBid(bidAmount.value);
 });
 
-
+//submit bid function
 function submitBid(bidNum) {
-    const data = {
-       amount: Number(bidNum)
-
-      };
-      console.log(JSON.stringify(data));
-            //url fetch and post method
-            fetch(`${baseUrl}${endpoint}`, {
-            method: 'POST', 
-            headers: {
-              Authorization: `Bearer ${token}`,
-              'content-Type': 'application/json',
-            },
-            //data in the body
-            body: JSON.stringify(data),
-            
-          })
-    
-            .then((response) => {
-              if (response.ok === true) {
-                //reloads page if comment is posted to update the display
-               updateCredits();
-               setTimeout(() => {
-                document.location.reload (true);
-               },500);
-              }
-              return response.json();
-            })
-            .then((Object) => {
-              console.log(Object);
-            })
-            .catch(error => console.log("error",  error));
-        }
-    
+  //dataobject.
+  //amount had to be converted to number
+  const data = {
+    amount: Number(bidNum),
+  };
+  console.log(JSON.stringify(data));
+  //url fetch and post method
+  //fetching baseurl and this endpoints
+  fetch(`${baseUrl}${endpoint}`, {
+    //post method
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "content-Type": "application/json",
+    },
+    //data in the body
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok === true) {
+        //reloads page if comment is posted to update the display
+        //run updatecredits function to local storage as this will change on submit bid
+        updateCredits();
+        setTimeout(() => {
+          document.location.reload(true);
+        }, 500);
+      }
+      return response.json();
+    })
+    .then((Object) => {
+      console.log(Object);
+    })
+    .catch((error) => console.log("error", error));
+}

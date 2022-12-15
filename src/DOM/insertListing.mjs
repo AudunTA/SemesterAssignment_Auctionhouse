@@ -1,5 +1,7 @@
 export function DOM_listing (DOM_element, DOM_object) {
-    console.log(DOM_object);
+    console.log(DOM_object.description);
+    const description = descriptionError(DOM_object.description);
+  console.log(description);
     const endDate = convertDate(DOM_object.endsAt);
     DOM_element.innerHTML +=`<div class="col-sm-6 col-lg-4 mb-3">
     <div class="card w-100 h-100">
@@ -10,7 +12,7 @@ export function DOM_listing (DOM_element, DOM_object) {
       <div class="card-body d-flex flex-column justify-content-between">
       <div>
         <h5 class="card-title">${DOM_object.title}</h5>
-        <p class="card-text">${DOM_object.description}</p>
+        ${description}
         </div>
         <a href="spesific.html?id=${DOM_object.id}" class="btn btn-primary">VIEW ITEM</a>
       </div>
@@ -29,6 +31,16 @@ function convertDate(isoString) {
       const stringDate = date.toString();
   return stringDate.slice(0,25);
 
+  }
+
+}
+
+export function descriptionError(description) {
+  if(description) {
+    return `<p class="card-text">${description}</p>`
+  }
+  else {
+    return `<p class="text-secondary">this listing does not have a description</p>`;
   }
 
 }

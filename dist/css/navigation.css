@@ -10770,10 +10770,10 @@ textarea.form-control-lg {
   }
 }
 :root {
-  --blue: #2A3475;
+  --blue: #2a3475;
   --white: #ffffff;
   --gray: #eee5e5;
-  --pink: #FF667B;
+  --pink: #ff667b;
   --dark: #292929;
   --background: #111024;
 }
@@ -10783,7 +10783,7 @@ html {
 }
 
 .btn-primary {
-  background-color: #09203F;
+  background-color: #09203f;
   border: 1px solid;
   overflow: hidden;
   position: relative;
@@ -10792,7 +10792,7 @@ html {
 body {
   height: 100%;
   background: #007991; /* fallback for old browsers */
-  background: linear-gradient(to left, #09203F, #537895);
+  background: linear-gradient(to left, #09203f, #537895);
   font-family: "Poppins";
   font-style: normal;
 }
@@ -10887,7 +10887,12 @@ body h2, body .h2 {
 }
 
 .col-nav-left {
+  min-height: 90vh;
   width: 100px;
+}
+
+#profile_avatar {
+  max-height: 700px;
 }
 
 .md-4 p {

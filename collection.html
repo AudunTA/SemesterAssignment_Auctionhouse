@@ -12,45 +12,58 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script defer src="/src/navigation/modal.js"></script>
     <script defer type="module" src="/src/collection.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
 <body>
-
+  <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark nav-mobile">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">AuctionHose</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="collection.html" class="nav-item nav-link active">Collection</a>
+                <a href="profile.html" class="nav-item nav-link">Profile</a>
+            </div>
+        </div>
+    </div>
+</nav>
   
    <div class="container">
     <div class="row">
       <div class="col">
         <div class="nav_menu d-flex align-items-center" >
-            <div class="logo align-items-center">
-        
-            </div>
-            <img class="rounded" src="/images/logo.png" id="logo_header">
-            <div class="searchbar">
-                <input class="rounded border" type="text" id="search_field" placeholder="Search for an item">
-            </div>
-            <button type="submit">Search</button>
-            <div class="icon_one">
-                <i class="fas fa-bell" id="nav_icon"></i>
-            </div>
-            <div class="icon_two">
-                <i class="fas fa-bell"></i>
-            </div>
-            <div class="user_login">
-                <div class="d-flex align-items-center border rounded profile-header">
-                    <img src="/images/coolcat.jpg" id="profile_header">
-                    <span id="header_username">Username</span>
-                    <i class="fa-solid fa-caret-down"></i>
-                </div>
-              </div>
-              <button id="btnHeader_signUp"class="btn btn-primary btn_signUp rounded">Sign Up</button>
+            
+          <div class="searchbar">
+              <input class="rounded border m-4 d-none d-md-block w-100 p-1" type="text" id="search_fieldH" placeholder="Search for an item">
+          </div>
+          <button class="btn btn-secondary d-none d-md-block" id="btn_searchH" type="submit">Search</button>
 
-           </div>
+          <div class="dropdown user-logIn">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2 profile-pic-header" data-bs-toggle="dropdown" aria-expanded="false">
+              <span id="profile-pic-header"></span>
+              <span id="header_username" class="m-1">Username</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item log-out" href="#">Log out</a></li>
+
+            </ul>
+          </div>
+
+            <button class="btn btn-primary m-2 btn_signUp" id="btnHeader_signUp">SignUp</button>
+
+         </div>
       </div>
       
       <div class="w-100"></div>
       <div class="col-2 col-nav-left d-none d-md-block">
         <div class="nav_left">
             <div class="d-flex flex-column">
-               <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon active-icon"></i>
+               <a href="index.html"><i class="fa-sharp fa-solid fa-house active_nav nav_left_icon"></i></a>
+               <i class="fa-solid fa-building-columns nav_left_icon active-icon"></i>
              <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
            
             <i class="fa-solid fa-gear nav_left_icon" ></i>
@@ -117,10 +130,6 @@
             </div>
             <div class="row m-1">
 
-            
-        
-
-                  
                 </div>
 
         
