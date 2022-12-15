@@ -1,5 +1,6 @@
 import { getToken } from "./auth/status.mjs";
 import { baseUrl } from "./api/apiBase.mjs";
+import { updateHeaderUser } from "./auth/status.mjs";
 
 const userName = localStorage.getItem("username");
 console.log(userName);
@@ -10,24 +11,37 @@ const DOMCredits = document.querySelector("#profile_credit");
 const DOMavatar = document.querySelector("#profile_avatar");
 const btnEditAvatar = document.querySelector("#btn_edit");
 const editForm = document.querySelector("#edit_form");
+const DOMerrorProfile = document.querySelector(".error-profile");
 const token = getToken();
-
-const btn_updateAvatar = document.querySelector("#btn_updateAvatar");
-const input_edit = document.querySelector("#edit_input");
 const options = {
   headers: {
     "content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   },
 };
-console.log(token);
-if (!token) {
+if (token) {
+  //runs if user is logged in
+  const username = localStorage.getItem("username");
+  const credits = localStorage.getItem("credit");
+  updateHeaderUser(username);
+  getProfile();
+} else {
   console.log("user not logged in");
   btnEditAvatar.disabled = true;
   btnEditAvatar.classList.add("btn-secondary");
-} else {
-  getProfile();
+  DOMerrorProfile.innerHTML += `<div class="col">
+  <div class="card m-1 w-100" style="width: 18rem;">
+    <div class="m-1">
+      <p class="text-danger text-center pt-2">Please log in to see profile information</p>
+    </div>
+</div>
+</div>`;
 }
+
+const btn_updateAvatar = document.querySelector("#btn_updateAvatar");
+const input_edit = document.querySelector("#edit_input");
+
+console.log(token);
 
 async function getProfile() {
   try {

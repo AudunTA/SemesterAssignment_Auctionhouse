@@ -12,6 +12,7 @@ import { getAvatarLoggedIn } from "./auth/status.mjs";
 import { updateUserDOM } from "./auth/status.mjs";
 import { sortFilter } from "./listings/filterListing.mjs";
 import { displayListing } from "./listings/displayListing.mjs";
+const btn_addBalance = document.querySelector("#btn_addBalance");
 
 //get parameters
 const queryString = document.location.search;
@@ -19,28 +20,23 @@ const params = new URLSearchParams(queryString);
 const filter_text = document.querySelector(".filter-text");
 const btn_span = document.querySelector("#button-span");
 const container = document.querySelector(".container-cards");
+//credit inputs are used to fill inn the DOM field on certain pages.
+const DOM_credits = document.querySelector("#user_credit");
 
-// login /sign up inputs
-const userLoggedIn = document.querySelector(".user-logIn");
-const btn_signUp = document.querySelector("#btnHeader_signUp");
-const btn_addBalance = document.querySelector("#btn_addBalance");
-const logOut = document.querySelector(".log-out");
 const searchWord = params.get("search");
 
 if (getToken()) {
   const username = localStorage.getItem("username");
   const credits = localStorage.getItem("credit");
-  btn_signUp.style.display = "none";
-  userLoggedIn.style.display = "block";
-  btn_signUp.style.display = "none";
-  getAvatarLoggedIn();
+
   updateUserDOM(username, credits);
 } else {
   console.log("not logged in");
+  DOM_credits.innerHTML = "log in to view ";
+  btn_addBalance.disabled = true;
+  btn_addBalance.classList.add("btn-secondary");
 }
-logOut.addEventListener("click", () => {
-  signOut();
-});
+
 if (searchWord) {
   filter_text.innerHTML = "search:";
   container.innerHTML = "";
@@ -85,20 +81,8 @@ if (filter) {
 
 console.log(baseUrl);
 
-const signup_form = document.querySelector("#signUp_form");
-
-const logIn_form = document.querySelector("#logIn_form");
 const create_form = document.querySelector("#create_form");
 
-signup_form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  register();
-});
-
-logIn_form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  logIn();
-});
 const input_title = document.querySelector("#create_title");
 const input_description = document.querySelector("#create_description");
 const input_tags = document.querySelector("#create_tags");
