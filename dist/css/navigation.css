@@ -10826,9 +10826,8 @@ body h2, body .h2 {
 }
 
 .nav_left {
-  position: fixed;
   text-align: center;
-  height: 90vh;
+  height: 100%;
   width: 90px;
   background-color: var(--white);
   border-radius: 19px;
@@ -10910,6 +10909,11 @@ body h2, body .h2 {
   }
   .sort-buttons {
     flex-direction: column;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .nav-mobile {
+    display: none;
   }
 }
 

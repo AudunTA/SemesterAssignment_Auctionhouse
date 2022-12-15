@@ -20,14 +20,25 @@
 </head>
 <body>
 
-  
+  <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark nav-mobile">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">AuctionHose</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="collection.html" class="nav-item nav-link">Collection</a>
+                <a href="profile.html" class="nav-item nav-link">Profile</a>
+            </div>
+        </div>
+    </div>
+</nav>
    <div class="container">
     <div class="row">
       <div class="col">
         <div class="nav_menu d-flex align-items-center" >
-            <div class="logo align-items-center">
-        
-            </div>
             
             <div class="searchbar">
                 <input class="rounded border m-4 d-none d-md-block w-100 p-1" type="text" id="search_fieldH" placeholder="Search for an item">
@@ -55,6 +66,7 @@
         <div class="nav_left">
             <div class="d-flex flex-column">
                <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon active-icon"></i>
+               <a href="collection.html"><i class="fa-solid fa-building-columns nav_left_icon"></i></a>
              <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
            
             <i class="fa-solid fa-gear nav_left_icon" ></i>
@@ -266,8 +278,8 @@
         <label class="form-label" for="tags"></label>
         <input type="text" id="create_media" class="form-control" placeholder="media URL" />
         <label class="form-label" for="media"></label>
-        <input type="text" id="create_endsAt" class="form-control" placeholder="end date (YYYY-MM-DD)" />
-        <label class="form-label" for="endsAt"></label>
+        <label for="startDate">End date:</label>
+        <input id="create_endsAt" class="form-control" type="date" />
         
                 
             </div>
