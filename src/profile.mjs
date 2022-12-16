@@ -58,7 +58,8 @@ async function getProfile() {
     DOMEmail.innerHTML = result.email;
     DOMCredits.innerHTML = result.credits;
     console.log(result.avatar);
-    DOMavatar.innerHTML = `<img class="w-100" src="${result.avatar}">`;
+    DOMavatar.innerHTML = `<img class="w-100 h-100"src="${result.avatar}" onerror="this.src = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png';" id="profile_avatar">`;
+    console.log(result[i].avatar);
   } catch (err) {
     DOMerrorProfile.innerHTML += `<div class="col">
   <div class="card m-1 w-100" style="width: 18rem;">

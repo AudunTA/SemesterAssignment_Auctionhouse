@@ -109,7 +109,8 @@ body h2 {
   width: 100px;
 }
 #profile_avatar {
-  max-height: 700px;
+  max-height: 500px;
+  object-fit: cover;
 }
 .md-4 p {
   font-size: 100px;

@@ -10889,7 +10889,8 @@ body h2, body .h2 {
 }
 
 #profile_avatar {
-  max-height: 700px;
+  max-height: 500px;
+  object-fit: cover;
 }
 
 .md-4 p {

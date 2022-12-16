@@ -33,7 +33,7 @@ export async function getAvatarLoggedIn() {
     const result = await response.json();
     console.log(result.avatar);
     console.log("TEST");
-    DOMavatar.innerHTML = `<img src="${result.avatar}" onerror="this.src = '/images/profile.jpg';" id="profile_header">`;
+    DOMavatar.innerHTML = `<img src="${result.avatar}" onerror="this.src = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png';" id="profile_header">`;
   } catch (e) {
     console.log(e);
   }
