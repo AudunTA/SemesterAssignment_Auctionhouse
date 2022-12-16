@@ -8,6 +8,7 @@ const DOMAmountBids = document.querySelector("#bid-amount");
 const DOMbids = document.querySelector(".bid-container");
 const DOMhighestBid = document.querySelector("#highest-bid");
 const DOMSellerName = document.querySelector("#seller-name");
+const containerError = document.querySelector(".col-content");
 import { getToken } from "../auth/status.mjs";
 const token = getToken();
 console.log(token);
@@ -23,6 +24,9 @@ export async function spesific(id) {
     console.log(response);
 
     const result = await response.json();
+    if (response.status !== 200) {
+      throw `API reponded with the error ${response.status}`;
+    }
     let image = `<img class="w-100"src="${result.media[0]}" id="img-spesific">`;
     console.log(image);
     if (!result.media[0]) {
@@ -36,7 +40,15 @@ export async function spesific(id) {
     DOMdescription.innerHTML = description;
     DOMSellerName.innerHTML = result.seller.name;
     getBids(id);
-  } catch (e) {}
+  } catch (e) {
+    containerError.innerHTML = `<div class="col">
+    <div class="card m-1 w-100" style="width: 18rem;">
+      <div class="m-1">
+        <p class="text-danger text-center pt-2">${e}</p>
+      </div>
+  </div>
+  </div>`;
+  }
 }
 
 async function getBids(id) {

@@ -49,7 +49,7 @@ const filter = params.get("filter");
 console.log(filter);
 //console.log(searchWord);
 if (!filter && !searchWord) {
-  displayListing(4);
+  displayListing(container, 5);
 }
 if (filter) {
   filter_text.innerHTML = "filter:";

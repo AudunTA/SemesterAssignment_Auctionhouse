@@ -20,6 +20,8 @@ const input_tags = document.querySelector("#create_tags");
 const input_media = document.querySelector("#create_media");
 const input_ends = document.querySelector("#create_endsAt");
 
+const DOMcontainer = document.querySelector(".container-cards");
+
 if (token) {
   //runs if user is logged in
   const username = localStorage.getItem("username");
@@ -31,7 +33,7 @@ if (token) {
   btn_addBalance.classList.add("btn-secondary");
 }
 
-displayListing(5);
+displayListing(DOMcontainer, 5);
 
 create_form.addEventListener("submit", (e) => {
   console.log("test");

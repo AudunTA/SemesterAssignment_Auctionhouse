@@ -51,7 +51,7 @@ async function getProfile() {
     if (response.status === 200) {
       console.log(response.statusText);
     } else {
-      throw "the API did not respond with with a status of 200";
+      throw `the API responded with with a status of ${response.status}`;
     }
     console.log(result);
     DOMUsername.innerHTML = result.name;
@@ -60,8 +60,13 @@ async function getProfile() {
     console.log(result.avatar);
     DOMavatar.innerHTML = `<img class="w-100" src="${result.avatar}">`;
   } catch (err) {
-    console.log("test");
-    console.log(err);
+    DOMerrorProfile.innerHTML += `<div class="col">
+  <div class="card m-1 w-100" style="width: 18rem;">
+    <div class="m-1">
+      <p class="text-danger text-center pt-2">${err}</p>
+    </div>
+</div>
+</div>`;
   }
 }
 const modal_edit = document.querySelector(".modal_edit");

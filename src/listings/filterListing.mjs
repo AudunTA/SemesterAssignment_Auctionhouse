@@ -16,6 +16,7 @@ export async function sortFilter(filterWord) {
   } catch (e) {
   } finally {
     console.log(filterArray);
+    container.innerHTML = "";
     for (let i = 0; i < filterArray.length; i++) {
       console.log(filterArray[i].tags.length);
       for (let x = 0; x < filterArray[i].tags.length; x++) {

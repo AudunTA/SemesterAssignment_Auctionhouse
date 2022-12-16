@@ -1,6 +1,7 @@
 import { spesific } from "./listings/displaySpesific.mjs";
 import { baseUrl } from "./api/apiBase.mjs";
 import { getToken, updateCredits } from "./auth/status.mjs";
+import { updateHeaderUser } from "./auth/status.mjs";
 
 const token = getToken();
 const queryString = document.location.search;
@@ -15,6 +16,9 @@ if (!token) {
   console.log("user not logged in");
   btnBid.disabled = true;
   btnBid.classList.add("btn-secondary");
+} else {
+  const username = localStorage.getItem("username");
+  updateHeaderUser(username);
 }
 btnBid.addEventListener("click", (e) => {
   e.preventDefault();

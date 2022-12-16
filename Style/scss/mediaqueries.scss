@@ -1,0 +1,47 @@
+@media only screen and (min-width: 768px) {
+  .nav-mobile {
+    display: none;
+  }
+  .container-placeBid {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .balance-container {
+    width: 300px;
+  }
+  .container-top-homepage {
+    flex-direction: row;
+  }
+  .sort-collection {
+    flex-direction: column;
+  }
+  .sort-buttons button {
+    width: 100%;
+  }
+  .sort-buttons {
+    flex-direction: column;
+  }
+  .btn-primary {
+    font-size: 12px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .col-buy {
+    padding-right: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .container-cards {
+    display: flex;
+  }
+  .container-placeBid {
+    flex-direction: row;
+  }
+}

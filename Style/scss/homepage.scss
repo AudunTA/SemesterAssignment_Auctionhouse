@@ -1,74 +1,14 @@
 :root {
-    --blue: #2A3475;
-    --white: #ffffff;
-    --gray: #F4F7FE;
-    --pink: #FF667B;
-    --dark: #292929;
-    --buttonheight: 30px;
-    --buttonpadding: 5px;
+  --blue: #2a3475;
+  --white: #ffffff;
+  --gray: #f4f7fe;
+  --pink: #ff667b;
+  --dark: #292929;
+  --buttonheight: 30px;
+  --buttonpadding: 5px;
 }
 
 .container-top-homepage {
-    display: flex;
-    flex-direction: column;
-}
-.banner-container {
-    padding: 10px;
-    width: 100%;
-    margin: 5px;
-    background-color: var(--white);
-}
-.balance-container {
-     padding: 10px;
-   width: 100%;
-   margin: 5px;
-    background-color: var(--white);
-}
-.col-content {
-    margin-top: 5px;
-    width: 100%;
-    
-}
-
-
-.subheader-text {
-    color: var(--blue);
-}
-
-
-
-
-.card-items {
-    background-color: var(--white);
-    padding: 7px;
-
-}
-.card-profileIMG {
-    width: 30px;
-    height: 30px;
-    border-radius: 66%;
-}
-
-
-#profile-picture {
-    width: 100%;
-    max-width: 55px;
-    min-width: 30px;
-    border-radius: 66%;
-
-}
-
-
-@media only screen and (min-width: 576px) {
-    .col-buy {
-        padding-right: 0px !important;
-    }
-}
-
-@media only screen and (min-width: 991px) {
-    .container-cards {
-        display: flex;
-    }
-
-
+  display: flex;
+  flex-direction: column;
 }

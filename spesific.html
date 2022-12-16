@@ -9,9 +9,14 @@
     
     <link rel="stylesheet" href="/dist/css/homepage.css" />
     <link rel="stylesheet" href="/dist/css/navigation.css" />
+    <link rel="stylesheet" href="/dist/css/buttons.css"/>
+    <link rel="stylesheet" href="/dist/css/mediaqueries.css"/>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script defer src="/src/navigation/modal.js"></script>
     <script defer type="module" src="/src/spesific.mjs"></script>
+    <script defer type="module" src="/src/navigation/user.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark nav-mobile">
@@ -34,44 +39,41 @@
     <div class="row">
       <div class="col">
         <div class="nav_menu d-flex align-items-center" >
-            <div class="logo align-items-center">
-        
-            </div>
-            <img class="rounded" src="/images/logo.png" id="logo_header">
-            <div class="searchbar">
-                <input class="rounded border" type="text" id="search_field" placeholder="Search for an item">
-            </div>
-            <button type="submit">Search</button>
-            <div class="icon_one">
-                <i class="fas fa-bell" id="nav_icon"></i>
-            </div>
-            <div class="icon_two">
-                <i class="fas fa-bell"></i>
-            </div>
-            <div class="user_login">
-                <div class="d-flex align-items-center border rounded profile-header">
-                    <img src="/images/coolcat.jpg" id="profile_header">
-                    <span id="header_username">Username</span>
-                    <i class="fa-solid fa-caret-down"></i>
-                </div>
-              </div>
-              <button id="btnHeader_signUp"class="btn btn-primary btn_signUp rounded">Sign Up</button>
+            
+          <div class="searchbar w-100">
+              <input class="rounded border m-4 d-none d-md-block w-100 p-1" type="text" id="search_fieldH" placeholder="Search for an item">
+          </div>
+          <button class="btn btn-secondary d-none d-md-block" id="btn_searchH" type="submit">Search</button>
 
-           </div>
+          <div class="dropdown user-logIn">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2 profile-pic-header" data-bs-toggle="dropdown" aria-expanded="false">
+              <span id="profile-pic-header"></span>
+              <span id="header_username" class="m-1">Username</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item log-out" href="#">Log out</a></li>
+
+            </ul>
+          </div>
+
+            <button class="btn btn-primary m-2 btn_signUp" id="btnHeader_signUp">SignUp</button>
+
+         </div>
       </div>
       
       <div class="w-100"></div>
-      <div class="col-2 col-nav-left">
+      <div class="col-2 col-nav-left d-none d-md-block">
         <div class="nav_left">
-            <div class="d-flex flex-column">
-               <i class="fa-sharp fa-solid fa-house active_nav nav_left_icon active-icon"></i>
-             <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
-           
-            <i class="fa-solid fa-gear nav_left_icon" ></i>
-            <i class="fa-solid fa-album-collection nav_left_icon"></i>
-            </div>
-            
-           </div>
+          <div class="d-flex flex-column">
+            <a href="index.html"><i class="fa-sharp fa-solid fa-house nav_left_icon"></i></a>
+             <a href="collection.html"><i class="fa-solid fa-building-columns nav_left_icon"></i></a>
+           <a href="profile.html"><i class="fa-solid fa-user nav_left_icon"> </i></a>
+         
+          <i class="fa-solid fa-gear nav_left_icon" ></i>
+          <i class="fa-solid fa-album-collection nav_left_icon"></i>
+          </div>
+          
+         </div>
       </div>
       <div class="col col-content">
         <div class="row m-1">
@@ -79,7 +81,9 @@
             <div class="card m-1 w-100 h-100" style="width: 18rem;">
               <div class="card-body d-flex flex-column justify-content-between">
                 <h3><span id="spesific-title"></span></h3>
-                <span id="spesific-img"></span>
+                <span id="spesific-img">                         <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div></span>
           
               </div>
             </div>
@@ -88,95 +92,59 @@
             <div class="card m-1 w-100 h-100" style="width: 18rem;">
               <div class="card-body d-flex flex-column justify-content-between">
                 <div>
-                                  <span id="spesific-description"></span>
+                                  <p> description: <span id="spesific-description"></span></p>
                 <strong><p>highest bid:</strong> <span id="highest-bid"></span></p>
                 <p>seller: <span id="seller-name"></span></p>
-                <div class="container-cards">
-                  <div class="card px-3 pt-3 m-2 w-100">
-    
-                    <div>
-    
-    
-                      <div class="row mb-3">
-                        <div class="col-6">
-                          <a href="" class="text-info">
-                            <i class="fas fa-gavel"></i>
-                            Bids
-                          </a>
-                        </div>
-                  
-                        <div class="col-6 text-end">
-                          <u> 15.07.2020</u>
-                        </div>
-                      </div>
-                  
-                      <!-- Article title and description -->
-                      
-                        <h5>bids will show up here</h5>
-                  
-    
-                      <p>this listing have <span id="bid-amount"></span> bids</p>
-                  
-                      <hr />
-                  
-                    
-                      <div class="bid-container">
-    
-                      </div>
-    
-                    </div>
-             
-                  </div>
-              </div>
-                </div>
 
               </div>
+              <div class="container-placeBid">
+                  
+                    
+  
+                <div class="d-flex container-placeBid">
+                  <input type="number" class="form-control m-1" placeholder="bid amount" id="input_bid">
+                <button type="submit" class="btn btn-primary btn-block m-1 w-50" id="btn_bid">BID</button>
+                </div>
+         
+              
+
+       
+          </div>
             </div>
           </div>
           
             </div>
 
+            <div class="col-md-8 col-lg-8 mb-2">
+              <div class="card m-1 mt-2 w-100 h-100">
+                <div class="card-body m-1">
 
-          
-                <div class="container-cards">
-                  <div class="card px-3 pt-3 m-2 w-100">
-
-                    <div>
-
-
-                      <div class="row mb-3">
-                        <div class="col-6">
-                          <a href="" class="text-info">
-                            <i class="fas fa-gavel"></i>
-                            Bids
-                          </a>
-                        </div>
-                  
-                        <div class="col-6 text-end">
-                          <u> 15.07.2020</u>
-                        </div>
-                      </div>
-                  
-
-                      
-                        <h5>place a bid.</h5>
-                  
-                      <div class="d-flex">
-                        <input type="number" class="form-control m-1" placeholder="bid amount" id="input_bid">
-                      <button type="submit" class="btn btn-primary btn-block m-1 w-25" id="btn_bid">BID</button>
-                      </div>
-                      
-                  
-                      <hr />
-                  
-                    
-                      <div class="container">
-
-                      </div>
-
-                    </div>
-             
+                
+                <div class="row mb-3 w-100">
+                  <div class="col-6">
+                    <a href="" class="text-info w-100">
+                      <i class="fas fa-gavel"></i>
+                      Bids
+                    </a>
                   </div>
+                </div>
+
+                  <h5>bids will show up here</h5>
+            
+
+                <p>this listing have <span id="bid-amount"></span> bids</p>
+            
+                <hr />
+            
+              
+                <div class="bid-container">
+
+                </div>
+            </div>
+          </div>
+            </div>
+          
+
                   
                     
             </div>
@@ -196,11 +164,14 @@
                 <form id="signUp_form">
                     <input type="text" id="userName_signUp" class="form-control" placeholder="Username" />
         <label class="form-label" for="loginName"></label>
+        <p class="signup-error" id="username-error"></p>
                     <input type="email" id="userEmail_signUp" class="form-control" placeholder="Email" />
         <label class="form-label" for="loginName"></label>
+        <p class="signup-error"id="email-error"></p>
         <input type="password" id="userPassword_signUp" class="form-control" placeholder="Password" />
         <label class="form-label" for="loginName"></label>
-                
+        <p class="signup-error"id="password-error"></p>
+        <p class="signup-success" id="status-message"></p>       
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary btn_singUp">Sign Up</button>
@@ -225,9 +196,11 @@
                 <form id="logIn_form">
                     <input type="email" id="userEmail_logIn" class="form-control" placeholder="Email" />
         <label class="form-label" for="loginName"></label>
+        <p class="login-error" id="error-emailLogIn"></p>
         <input type="password" id="userPassword_logIn" class="form-control" placeholder="Password" />
         <label class="form-label" for="loginName"></label>
-                
+        <p class="login-error" id="error-passwordLogIn"></p>
+        <p class="login-error" id="status-logIn"></p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary btn_signUp">Sign Up</button>
