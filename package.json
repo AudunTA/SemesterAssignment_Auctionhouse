@@ -3,7 +3,9 @@
     "build": "sass style/scss:dist/css",
     "watch": "sass --watch style/scss:dist/css",
     "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "cypress-test": "npm run test-e2e",
+    "test-e2e": "cypress open"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
