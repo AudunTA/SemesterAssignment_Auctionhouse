@@ -4,7 +4,7 @@
 
 const apiURL = "https://api.noroff.dev/api/v1/auction/listings";
 
-test("API test", async () => {
+test("API testing if api gives sucessful reponse status", async () => {
   const response = await fetch(`${apiURL}`);
   expect(response.status).toBe(200);
 });
