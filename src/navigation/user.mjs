@@ -6,7 +6,6 @@ import { updateUserDOM } from "../auth/status.mjs";
 import { signOut } from "../auth/signout.mjs";
 import { getAvatarLoggedIn } from "../auth/status.mjs";
 // login /sign up inputs
-console.log("TEST");
 const userLoggedIn = document.querySelector(".user-logIn");
 const btn_signUp = document.querySelector("#btnHeader_signUp");
 
@@ -49,20 +48,17 @@ logOut.addEventListener("click", () => {
   signOut();
 });
 
-btn_searchHeader.addEventListener("click", () => {
-  console.log(input_searchHeader.value);
-});
 
 btn_searchMobile.addEventListener("click", () => {
   const searchWord = input_searchMobile.value;
-  console.log(searchWord);
+
   if (searchWord) {
     window.location.href = `collection.html?search=${searchWord}`;
   }
 });
 btn_searchHeader.addEventListener("click", () => {
   const searchWord = input_searchHeader.value;
-  console.log(searchWord);
+
   if (searchWord) {
     window.location.href = `collection.html?search=${searchWord}`;
   }

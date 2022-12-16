@@ -110,7 +110,7 @@ function validateCreateForm(title, ends) {
   } else {
     error_title.innerHTML = "";
   }
-  console.log(ends.value);
+
   if (!ends.value) {
     error_ends.innerHTML = "date is required";
   } else {
@@ -120,11 +120,7 @@ function validateCreateForm(title, ends) {
 
   let checkingDate = checkDate(time + "T00:00:00.000Z");
   if (ends.value) {
-    console.log("inne");
-
-    console.log(checkingDate);
   }
-  console.log(checkingDate);
   if (!checkingDate && time) {
     error_ends.innerHTML = "Make sure its a future date";
   }
@@ -137,7 +133,6 @@ function validateCreateForm(title, ends) {
 }
 
 function checkDate(isoString) {
-  console.log(isoString);
   const date = new Date(isoString.slice(0, -1));
   const todaysDate = new Date();
   if (todaysDate < date) {

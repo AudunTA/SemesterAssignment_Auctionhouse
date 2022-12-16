@@ -5,13 +5,11 @@ const endpoint = "/auction/listings?_seller=true&sort=created&sortOrder=desc";
 const container = document.querySelector(".container-cards");
 //search function
 export async function search(searchword) {
-  console.log(searchword);
   //creating empty array
   const searchArray = [];
   try {
     const response = await fetch(`${baseUrl}${endpoint}`);
     const result = await response.json();
-    console.log(result.length);
 
     for (let i = 0; i < result.length; i++) {
       //pusing to array so searching listing goes faster
@@ -19,12 +17,10 @@ export async function search(searchword) {
     }
   } catch (e) {
   } finally {
-    console.log(searchArray.length);
     for (let i = 0; i < searchArray.length; i++) {
       if (
         searchArray[i].title.toUpperCase().includes(searchword.toUpperCase())
       ) {
-        console.log(searchArray[i]);
         DOM_listing(container, searchArray[i]);
       }
     }

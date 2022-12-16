@@ -7,8 +7,6 @@ const btn_close = document.querySelectorAll(".close");
 const modalCreate = document.querySelector(".modal_create");
 const allModals = document.querySelectorAll(".modal");
 
-console.log(btn_logIn);
-console.log(btn_logIn.length);
 for (let i = 0; i < btn_logIn.length; i++) {
   btn_logIn[i].addEventListener("click", () => {
     modalSignUp.style.display = "none";

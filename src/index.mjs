@@ -9,7 +9,7 @@ import { getAvatarLoggedIn } from "./auth/status.mjs";
 import { postListing } from "./listings/createListing.mjs";
 const token = getToken();
 const btn_addBalance = document.querySelector("#btn_addBalance");
-console.log(btn_addBalance);
+
 //credit inputs are used to fill inn the DOM field on certain pages.
 const DOM_credits = document.querySelector("#user_credit");
 //input for create form
@@ -40,10 +40,9 @@ if (token) {
 displayListing(DOMcontainer, 5);
 
 create_form.addEventListener("submit", (e) => {
-  console.log("test");
   e.preventDefault();
   const validate = validateCreateForm(input_title, input_ends);
-  console.log(validate);
+  //if inputs are validated its sent to postlisting
   if (validate) {
     postListing(
       input_title.value,
@@ -61,7 +60,7 @@ function validateCreateForm(title, ends) {
   } else {
     error_title.innerHTML = "";
   }
-  console.log(ends.value);
+
   if (!ends.value) {
     error_ends.innerHTML = "date is required";
   } else {
@@ -71,11 +70,8 @@ function validateCreateForm(title, ends) {
 
   let checkingDate = checkDate(time + "T00:00:00.000Z");
   if (ends.value) {
-    console.log("inne");
-
-    console.log(checkingDate);
   }
-  console.log(checkingDate);
+
   if (!checkingDate && time) {
     error_ends.innerHTML = "Make sure its a future date";
   }
@@ -94,7 +90,6 @@ function validateCreateForm(title, ends) {
  * @return {boolean} - `true` if the date is in the future, `false` if it is in the past or today.
  */
 function checkDate(isoString) {
-  console.log(isoString);
   const date = new Date(isoString.slice(0, -1));
   const todaysDate = new Date();
   //i made the function only accept future dates, not today's date as my input dont have hours/minutes.

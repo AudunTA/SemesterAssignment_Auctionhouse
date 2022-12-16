@@ -5,7 +5,7 @@ const token = getToken();
 
 export function postListing(title, description, tags, media, endsAt) {
   const ends = convertDate(endsAt);
-  console.log(media);
+
   //body data uten bilde
   let data = {
     title: title,
@@ -14,7 +14,6 @@ export function postListing(title, description, tags, media, endsAt) {
     tags: [tags],
   };
   if (media) {
-    console.log("inne");
     //body data med bilde
     data = {
       title: title,
@@ -25,7 +24,6 @@ export function postListing(title, description, tags, media, endsAt) {
     };
   }
 
-  console.log(title, description, ends, media);
   //url fetch and post method
   fetch(`${baseUrl}${endpoint}`, {
     method: "POST",
@@ -43,9 +41,7 @@ export function postListing(title, description, tags, media, endsAt) {
       }
       return response.json();
     })
-    .then((Object) => {
-      console.log(Object);
-    })
+    .then((Object) => {})
     .catch((error) => console.log("error", error));
 }
 

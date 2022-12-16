@@ -81,10 +81,8 @@ export async function spesific(id) {
 
 async function getBids(id) {
   try {
-    console.log("test");
     const response = await fetch(`${baseUrl}${endpoint}${id}/?_bids=true`);
     const result = await response.json();
-    console.log(result);
     DOMAmountBids.innerHTML = result.bids.length;
     let x = result.bids.length;
 
@@ -92,8 +90,6 @@ async function getBids(id) {
       DOMhighestBid.innerHTML = "this listing does not have any bids yet.";
     } else {
       DOMhighestBid.innerHTML = result.bids[x - 1].amount;
-      console.log(result.bids[x - 1].amount);
-      console.log("TEST");
     }
 
     for (let i = 0; i < result.bids.length; i++) {
@@ -115,7 +111,7 @@ async function getBids(id) {
           `;
     }
   } catch (e) {
-    console.log(e);
+    console.log("error: ", e);
   }
 }
 
