@@ -81,8 +81,10 @@ export async function spesific(id) {
 
 async function getBids(id) {
   try {
+    console.log("test");
     const response = await fetch(`${baseUrl}${endpoint}${id}/?_bids=true`);
     const result = await response.json();
+    console.log(result);
     DOMAmountBids.innerHTML = result.bids.length;
     let x = result.bids.length;
 
@@ -90,14 +92,17 @@ async function getBids(id) {
       DOMhighestBid.innerHTML = "this listing does not have any bids yet.";
     } else {
       DOMhighestBid.innerHTML = result.bids[x - 1].amount;
+      console.log(result.bids[x - 1].amount);
+      console.log("TEST");
     }
 
     for (let i = 0; i < result.bids.length; i++) {
+      console.log(result.bids.length);
       let avatar = await getAvatar(result.bids[i].bidderName);
       DOMbids.innerHTML += `                      
             <div class="row mb-4 border-bottom pb-2">
               <div class="col-3">
-                <img src="${avatar}"  onerror="this.src = '/images/profile.jpg'";
+                <img src="${avatar}"  onerror="this.src = './images/profile.jpg'";
                   class="img-fluid shadow-1-strong rounded" alt="profile image" />
               </div>
       
@@ -111,7 +116,7 @@ async function getBids(id) {
           `;
     }
   } catch (e) {
-    console.log("error: ", e);
+    console.log(e);
   }
 }
 
