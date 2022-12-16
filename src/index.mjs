@@ -87,10 +87,17 @@ function validateCreateForm(title, ends) {
   }
 }
 
+/**
+ * Check if a date is in the future.
+ *
+ * @param {string} isoString - An ISO-formatted date string.
+ * @return {boolean} - `true` if the date is in the future, `false` if it is in the past or today.
+ */
 function checkDate(isoString) {
   console.log(isoString);
   const date = new Date(isoString.slice(0, -1));
   const todaysDate = new Date();
+  //i made the function only accept future dates, not today's date as my input dont have hours/minutes.
   if (todaysDate < date) {
     return true;
   } else {

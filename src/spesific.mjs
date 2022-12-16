@@ -20,7 +20,6 @@ if (!token) {
   const username = localStorage.getItem("username");
   updateHeaderUser(username);
 }
-function checkExpired() {}
 btnBid.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("test");

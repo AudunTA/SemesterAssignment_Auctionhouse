@@ -3,8 +3,10 @@ import { displayListing } from "./displayListing.mjs";
 import { DOM_listing } from "../DOM/insertListing.mjs";
 const endpoint = "/auction/listings?_seller=true&sort=created&sortOrder=desc";
 const container = document.querySelector(".container-cards");
+//search function
 export async function search(searchword) {
   console.log(searchword);
+  //creating empty array
   const searchArray = [];
   try {
     const response = await fetch(`${baseUrl}${endpoint}`);
@@ -12,6 +14,7 @@ export async function search(searchword) {
     console.log(result.length);
 
     for (let i = 0; i < result.length; i++) {
+      //pusing to array so searching listing goes faster
       searchArray.push(result[i]);
     }
   } catch (e) {

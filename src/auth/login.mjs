@@ -42,7 +42,7 @@ function validateUserInputsLogIn(data) {
   //this regex is a handy regex expression that covers letters, numbers and udnerscores.
   //I use this to test username;
   //regEx who only allowes @stud.noroff.no/noroff.no email type.
-  let regEmail = /^[a-zA-Z0-9._%+-]+@(stud.noroff).no/;
+  let regEmail = /^[\w\-.]+@(stud.noroff).no/;
   let validateEmail = regEmail.test(data.email);
   console.log(validateEmail);
   if (!validateEmail) {
