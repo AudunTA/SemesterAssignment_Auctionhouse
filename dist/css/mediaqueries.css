@@ -28,6 +28,10 @@
   body {
     font-size: 12px;
   }
+  .filter-text {
+    font-size: 25px;
+    margin: auto;
+  }
 }
 @media only screen and (min-width: 576px) {
   .col-buy {

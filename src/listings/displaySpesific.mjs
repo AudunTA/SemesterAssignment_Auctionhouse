@@ -1,5 +1,7 @@
 import { baseUrl } from "../api/apiBase.mjs";
 import { descriptionError } from "../DOM/insertListing.mjs";
+import { getToken } from "../auth/status.mjs";
+
 const endpoint = "/auction/listings/";
 const DOMtitle = document.querySelector("#spesific-title");
 const DOMimg = document.querySelector("#spesific-img");
@@ -9,7 +11,9 @@ const DOMbids = document.querySelector(".bid-container");
 const DOMhighestBid = document.querySelector("#highest-bid");
 const DOMSellerName = document.querySelector("#seller-name");
 const containerError = document.querySelector(".col-content");
-import { getToken } from "../auth/status.mjs";
+const btnBid = document.querySelector("#btn_bid");
+const DOMexpired = document.querySelector(".expired");
+
 const token = getToken();
 console.log(token);
 const options = {
@@ -24,6 +28,29 @@ export async function spesific(id) {
     console.log(response);
 
     const result = await response.json();
+    console.log(result.endsAt);
+    const date = new Date(result.endsAt.slice(0, -1));
+    const todayDate = new Date();
+    //if the listing is expired the bid button disables and a message appear on the top that its expired
+    if (date < todayDate) {
+      btnBid.disabled = true;
+      btnBid.classList.add("btn-secondary");
+      DOMexpired.innerHTML += `<div class="col">
+    <div class="card m-1 w-100" style="width: 18rem;">
+      <div class="m-1">
+        <p class="text-danger text-center pt-2">this listing has expired</p>
+      </div>
+  </div>
+  </div>`;
+    }
+    const username = localStorage.getItem("username");
+    //disable bid button if you are the seller
+    if (result.seller.name === username) {
+      console.log("samme");
+      btnBid.disabled = true;
+      btnBid.classList.add("btn-secondary");
+    }
+
     if (response.status !== 200) {
       throw `API reponded with the error ${response.status}`;
     }
@@ -33,6 +60,7 @@ export async function spesific(id) {
       image = `<p class="text-secondary">this listing does not have a image</p>`;
     }
     console.log(result);
+
     DOMtitle.innerHTML = result.title;
     DOMimg.innerHTML = image;
 
@@ -86,9 +114,19 @@ async function getBids(id) {
             </div>
           `;
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 }
 
+/**
+ * Retrieves the avatar for a given user.
+ *
+ * @async
+ * @param {string} userName - The name of the user.
+ * @returns {result.avatar} - A promise that resolves to the avatar for the user.
+ * @throws {Error} - If the request fails.
+ */
 async function getAvatar(userName) {
   const endpointUser = `/auction/profiles/${userName}`;
   try {

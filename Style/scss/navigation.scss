@@ -98,7 +98,11 @@ body h2 {
   background-color: #5783db;
   color: var(--white);
 }
-
+.filter-text {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+}
 .col-nav-left {
   min-height: 90vh;
   width: 100px;

@@ -10876,6 +10876,12 @@ body h2, body .h2 {
   color: var(--white);
 }
 
+.filter-text {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+
 .col-nav-left {
   min-height: 90vh;
   width: 100px;
