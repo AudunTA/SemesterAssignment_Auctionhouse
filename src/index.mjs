@@ -54,9 +54,8 @@ create_form.addEventListener("submit", (e) => {
     );
   }
 });
+//validation that title has a value and the end date is in the future
 function validateCreateForm(title, ends) {
-  console.log("inne");
-  console.log(title.value);
   if (!title.value) {
     error_title.innerHTML = "title is required";
   } else {
@@ -80,6 +79,7 @@ function validateCreateForm(title, ends) {
   if (!checkingDate && time) {
     error_ends.innerHTML = "Make sure its a future date";
   }
+  //if check date is true, time(ends.value) has a value and title has a value it will return true
   if (checkingDate && time && title.value) {
     return true;
   } else {

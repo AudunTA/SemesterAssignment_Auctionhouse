@@ -50,8 +50,8 @@ function validateUserInputsSignUp(data) {
   } else {
     errorUsername.innerHTML = "";
   }
-  //regEx who only allowes @stud.noroff.no/noroff.no email type.
-  let regEmail = /^[a-zA-Z0-9._%+-]+@(stud.noroff).no/;
+  //regEx that only allowes @stud.noroff.no/noroff.no email type.
+  let regEmail = /^[\w\-.]+@(stud.noroff).no/;
   let validateEmail = regEmail.test(data.email);
   console.log(validateEmail);
   if (!validateEmail) {
