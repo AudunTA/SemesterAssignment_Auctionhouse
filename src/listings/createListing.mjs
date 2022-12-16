@@ -48,8 +48,18 @@ export function postListing(title, description, tags, media, endsAt) {
     })
     .catch((error) => console.log("error", error));
 }
-//convert to ISO format function
-function converteDate(date) {
+
+/**
+ * Converts a date string to an ISO date string.
+ *
+ * @param {string} date - The date string to convert.
+ * @returns {string} - The ISO date string.
+ * @throws {TypeError} - If the input is not a string.
+ */
+function convertDate(date) {
+  if (typeof date !== "string") {
+    throw new TypeError("Input must be a string");
+  }
   const iso = date + "T00:00:00.000Z";
   return iso;
 }

@@ -6,4 +6,8 @@
   white-space: nowrap;
 }
 
+.sort-btn {
+  max-height: 35px;
+}
+
 /*# sourceMappingURL=buttons.css.map */
