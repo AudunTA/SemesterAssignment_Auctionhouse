@@ -20,6 +20,10 @@ const input_tags = document.querySelector("#create_tags");
 const input_media = document.querySelector("#create_media");
 const input_ends = document.querySelector("#create_endsAt");
 
+//error create form
+const error_title = document.querySelector(".error_title");
+const error_ends = document.querySelector(".error_ends");
+
 const DOMcontainer = document.querySelector(".container-cards");
 
 if (token) {
@@ -38,11 +42,58 @@ displayListing(DOMcontainer, 5);
 create_form.addEventListener("submit", (e) => {
   console.log("test");
   e.preventDefault();
-  postListing(
-    input_title.value,
-    input_description.value,
-    input_tags.value,
-    input_media.value,
-    input_ends.value
-  );
+  const validate = validateCreateForm(input_title, input_ends);
+  console.log(validate);
+  if (validate) {
+    postListing(
+      input_title.value,
+      input_description.value,
+      input_tags.value,
+      input_media.value,
+      input_ends.value
+    );
+  }
 });
+function validateCreateForm(title, ends) {
+  console.log("inne");
+  console.log(title.value);
+  if (!title.value) {
+    error_title.innerHTML = "title is required";
+  } else {
+    error_title.innerHTML = "";
+  }
+  console.log(ends.value);
+  if (!ends.value) {
+    error_ends.innerHTML = "date is required";
+  } else {
+    error_ends.innerHTML = "";
+  }
+  const time = ends.value;
+
+  let checkingDate = checkDate(time + "T00:00:00.000Z");
+  if (ends.value) {
+    console.log("inne");
+
+    console.log(checkingDate);
+  }
+  console.log(checkingDate);
+  if (!checkingDate && time) {
+    error_ends.innerHTML = "Make sure its a future date";
+  }
+  if (checkingDate && time && title.value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDate(isoString) {
+  console.log(isoString);
+  const date = new Date(isoString.slice(0, -1));
+  const todaysDate = new Date();
+  if (todaysDate < date) {
+    return true;
+  } else {
+    return false;
+  }
+}

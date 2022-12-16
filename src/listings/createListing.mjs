@@ -4,7 +4,7 @@ const endpoint = "/auction/listings";
 const token = getToken();
 
 export function postListing(title, description, tags, media, endsAt) {
-  const ends = converteDate(endsAt);
+  const ends = convertDate(endsAt);
   console.log(media);
   //body data uten bilde
   let data = {

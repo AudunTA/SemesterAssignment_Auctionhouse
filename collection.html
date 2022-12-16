@@ -240,8 +240,9 @@
             </div>
             <div class="modal-body">
                 <form id="create_form">
-                    <input type="text" id="create_title" class="form-control" placeholder="title" />
+                    <input type="text" id="create_title" class="form-control" placeholder="*title" />
         <label class="form-label" for="title"></label>
+        <p class="text-danger error_title"></p>
         <input type="text" id="create_description" class="form-control" placeholder="description" />
         <label class="form-label" for="description"></label>
         <input type="text" id="create_tags" class="form-control" placeholder="tags" />
@@ -250,6 +251,8 @@
         <label class="form-label" for="media"></label>
         <label for="startDate">End date:</label>
         <input id="create_endsAt" class="form-control" type="date" />
+        <p class="text-danger error_ends"></p>
+
         
                 
             </div>

@@ -2,16 +2,23 @@ import { postListing } from "./listings/createListing.mjs";
 import { getToken } from "./auth/status.mjs";
 import { search } from "./listings/searchListing.mjs";
 import { baseUrl } from "./api/apiBase.mjs";
-
-//login/register imports
-import { register } from "./auth/signup.mjs";
-import { logIn } from "./auth/login.mjs";
-import { signOut } from "./auth/signout.mjs";
-import { getAvatarLoggedIn } from "./auth/status.mjs";
-
 import { updateUserDOM } from "./auth/status.mjs";
 import { sortFilter } from "./listings/filterListing.mjs";
 import { displayListing } from "./listings/displayListing.mjs";
+
+const create_form = document.querySelector("#create_form");
+
+//create inputs
+const input_title = document.querySelector("#create_title");
+const input_description = document.querySelector("#create_description");
+const input_tags = document.querySelector("#create_tags");
+const input_media = document.querySelector("#create_media");
+const input_ends = document.querySelector("#create_endsAt");
+
+//error create form
+const error_title = document.querySelector(".error_title");
+const error_ends = document.querySelector(".error_ends");
+
 const btn_addBalance = document.querySelector("#btn_addBalance");
 
 //get parameters
@@ -81,22 +88,61 @@ if (filter) {
 
 console.log(baseUrl);
 
-const create_form = document.querySelector("#create_form");
-
-const input_title = document.querySelector("#create_title");
-const input_description = document.querySelector("#create_description");
-const input_tags = document.querySelector("#create_tags");
-const input_media = document.querySelector("#create_media");
-const input_ends = document.querySelector("#create_endsAt");
-
 create_form.addEventListener("submit", (e) => {
   console.log("test");
   e.preventDefault();
-  postListing(
-    input_title.value,
-    input_description.value,
-    input_tags.value,
-    input_media.value,
-    input_ends.value
-  );
+  const validate = validateCreateForm(input_title, input_ends);
+  console.log(validate);
+  if (validate) {
+    postListing(
+      input_title.value,
+      input_description.value,
+      input_tags.value,
+      input_media.value,
+      input_ends.value
+    );
+  }
 });
+//validation that title has a value and the end date is in the future
+function validateCreateForm(title, ends) {
+  if (!title.value) {
+    error_title.innerHTML = "title is required";
+  } else {
+    error_title.innerHTML = "";
+  }
+  console.log(ends.value);
+  if (!ends.value) {
+    error_ends.innerHTML = "date is required";
+  } else {
+    error_ends.innerHTML = "";
+  }
+  const time = ends.value;
+
+  let checkingDate = checkDate(time + "T00:00:00.000Z");
+  if (ends.value) {
+    console.log("inne");
+
+    console.log(checkingDate);
+  }
+  console.log(checkingDate);
+  if (!checkingDate && time) {
+    error_ends.innerHTML = "Make sure its a future date";
+  }
+  //if check date is true, time(ends.value) has a value and title has a value it will return true
+  if (checkingDate && time && title.value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDate(isoString) {
+  console.log(isoString);
+  const date = new Date(isoString.slice(0, -1));
+  const todaysDate = new Date();
+  if (todaysDate < date) {
+    return true;
+  } else {
+    return false;
+  }
+}
