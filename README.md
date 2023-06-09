@@ -1,40 +1,44 @@
-# SemesterAssignment_Auctionhouse
-# guide to run project
+# AuctionHouse
 
-git clone [SSH]
+This project is an e-commerce store web application built using React. It allows users to browse products, search for products, add products to the cart, and complete the checkout process.
 
-npm install <br />
-npm run build <br />
-npm run watch <br />
+## Features
 
-open live-server <br />
-
-
-## error handeling
-
-### listing:
-
-listing expired, you are unable to bid and get a message <br />
-your listing makes you unable to bid.
-
-### create listing:
-title is required, else a message will show <br />
-end date is required, else a message will show. additional the date has to be in the future date from today otherwhise you will get a message
-
-### Create user / log in:
-user must use stud.noroff.no email to registrer <br />
-name is required. <br />
-password must be longer 8 or longer.
-
-### API
-most api calls will result in a DOM element to tell the user the resposnse status and tell them something went wrong with the API request.
+- A user with a stud.noroff.no email may register
+- A registered user may login
+- A registered user may logout
+- A registered user may update their avatar
+- A registered user may view their total credit
+- A registered user may create a Listing with a title, deadline date, media gallery and description
+- A registered user may add a Bid to another user’s Listing
+- A registered user may view Bids made on a Listing
+- An unregistered user may search through Listings
 
 
+## Demo
 
-## testing:
+You can see a live demo of the ReactoTech store [here](https://audunta.github.io/SemesterAssignment_Auctionhouse/).
 
-### unit test:
-run tests: npm test-unit
+## Installation
 
-unit testing if token is required
-unit testing if api gives status code of 200
+1. Clone the repository:
+```
+git clone https://github.com/AudunTA/SemesterAssignment_Auctionhouse.git
+```
+2. Install the dependencies:
+```
+npm install
+```
+3. Start the development server:
+```
+npm run start
+```
+## Acknowledgements
+
+This project was created as an course assignment in Front-end frameworks.
+
+## Contact
+
+If you have any questions or suggestions, feel free to contact me at [aud-and2@online.no](mailto:aud-and2@online.no).
+
+
